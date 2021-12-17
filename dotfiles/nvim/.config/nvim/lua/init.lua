@@ -73,6 +73,9 @@ require('packer').startup(function()
     -- undotree
     use 'mbbill/undotree'
 
+    --easy motion
+    use 'Lokaltog/vim-easymotion'
+
 end)
 
 require('basic')

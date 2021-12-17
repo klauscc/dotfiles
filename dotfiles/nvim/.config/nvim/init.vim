@@ -1,3 +1,8 @@
+filetype on
+filetype plugin on
+filetype indent on
+set splitright
+
 lua require("init")
 
 "quickly select pairs.
