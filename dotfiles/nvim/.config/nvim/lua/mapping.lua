@@ -53,3 +53,6 @@ vim.api.nvim_set_keymap('n', '<leader>fu', ":ARsyncUp<CR>", {noremap = true, sil
 
 -- Tagbar
 vim.api.nvim_set_keymap('n', '<leader>lt', ":TagbarToggle<CR>", {noremap = true, silent = true})
+
+-- open files
+vim.api.nvim_set_keymap('n', 'g0', ":!open <cfile><CR>", {noremap = true, silent = true})

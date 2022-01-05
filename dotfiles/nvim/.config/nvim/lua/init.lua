@@ -73,8 +73,15 @@ require('packer').startup(function()
     -- undotree
     use 'mbbill/undotree'
 
-    --easy motion
+    -- easy motion
     use 'Lokaltog/vim-easymotion'
+
+    --    markdown preview
+    use {
+        'iamcco/markdown-preview.nvim',
+        run = function() vim.fn['mkdp#util#install']() end,
+        ft = {'markdown'}
+    }
 
 end)
 

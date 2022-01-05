@@ -16,6 +16,7 @@ vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
 -- Indent
+vim.o.autoindent = true
 vim.o.expandtab = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
