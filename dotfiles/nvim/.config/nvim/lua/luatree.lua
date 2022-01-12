@@ -35,7 +35,8 @@ vim.g.nvim_tree_show_icons = {
 vim.g.nvim_tree_disable_window_picker = 1
 
 require('nvim-tree').setup {
-    view = {width = 40, auto_resize = true, mappings = {list = list_binds}}
+    view = {width = 40, auto_resize = true, mappings = {list = list_binds}},
+    git = {ignore = false}
 }
 
 M = {}

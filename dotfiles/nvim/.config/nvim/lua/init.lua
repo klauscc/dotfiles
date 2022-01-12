@@ -23,6 +23,8 @@ require('packer').startup(function()
     use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
     use 'ludovicchabant/vim-gutentags' -- Automatic tags management
 
+    use 'makerj/vim-pdf'
+
     -- File explorer
     require('luatree').nvim_tree(use)
 

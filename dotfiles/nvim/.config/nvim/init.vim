@@ -19,3 +19,7 @@ if has("persistent_undo")
     set undodir=$HOME/.undodir"
     set undofile
 endif
+
+"fold
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
