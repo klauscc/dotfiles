@@ -21,5 +21,8 @@ if has("persistent_undo")
 endif
 
 "fold
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+augroup folding
+    autocmd!
+    autocmd filetype python set foldmethod=expr
+    autocmd filetype python set foldexpr=nvim_treesitter#foldexpr()
+augroup END

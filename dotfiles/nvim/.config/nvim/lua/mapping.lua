@@ -24,7 +24,7 @@ vim.api.nvim_set_keymap('n', '<leader><space>',
                         [[<cmd>lua require('telescope.builtin').buffers()<CR>]],
                         {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>sf',
-                        [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]],
+                        [[<cmd>lua require('telescope.builtin').find_files({previewer = false, no_ignore = true, hidden=true})<CR>]],
                         {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>sb',
                         [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]],
@@ -49,10 +49,15 @@ vim.api.nvim_set_keymap('n', '<leader>?',
                         {noremap = true, silent = true})
 
 -- arsync
-vim.api.nvim_set_keymap('n', '<leader>fu', ":ARsyncUp<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fu', ":ARsyncUp<CR>",
+                        {noremap = true, silent = true})
 
 -- Tagbar
-vim.api.nvim_set_keymap('n', '<leader>lt', ":TagbarToggle<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>lt', ":TagbarToggle<CR>",
+                        {noremap = true, silent = true})
 
 -- open files
-vim.api.nvim_set_keymap('n', 'g0', ":!open <cfile><CR>", {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', 'g0', ":!open <cfile><CR>",
+
+                        {noremap = true, silent = true})

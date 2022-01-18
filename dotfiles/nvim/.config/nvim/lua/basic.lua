@@ -40,6 +40,9 @@ vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
 vim.cmd [[colorscheme onedark]]
 
+-- ctags
+vim.g.gutentags_exclude_filetypes={'text', 'json'}
+
 -- Set statusbar
 vim.g.lightline = {
     colorscheme = 'onedark',

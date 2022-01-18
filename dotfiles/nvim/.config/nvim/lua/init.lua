@@ -21,7 +21,9 @@ require('packer').startup(function()
     use 'tpope/vim-fugitive' -- Git commands in nvim
     use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
     use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
-    use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+    use {
+        'ludovicchabant/vim-gutentags' -- Automatic tags management
+    }
 
     use 'makerj/vim-pdf'
 
@@ -37,9 +39,11 @@ require('packer').startup(function()
     -- Add git related info in the signs columns and popups
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
     -- Highlight, edit, and navigate code using a fast incremental parsing library
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-    -- Additional textobjects for treesitter
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
+    use {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 
     -- Completion
     require('complete').cmp(use)
