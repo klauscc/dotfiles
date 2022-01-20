@@ -23,6 +23,6 @@ endif
 "fold
 augroup folding
     autocmd!
-    autocmd filetype python set foldmethod=expr
-    autocmd filetype python set foldexpr=nvim_treesitter#foldexpr()
+    autocmd filetype python,markdown set foldmethod=expr
+    autocmd filetype python,markdown set foldexpr=nvim_treesitter#foldexpr()
 augroup END
