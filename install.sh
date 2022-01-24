@@ -1,14 +1,12 @@
 #!/usr/bin/env sh
 
-
+# Package manager on macOS
 ## install brew
 if ! type "brew" > /dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-## install neovim
-brew install neovim
-
+# Languages
 ## install nodejs
 if ! type "node" > /dev/null; then
     brew install node
@@ -24,6 +22,9 @@ if ! type "stow" > /dev/null; then
     brew install stow
 fi
 
+# Install Packages via brew
+## install neovim
+brew install neovim
 ##  fuzzy finders
 brew install ripgrep
 brew install rga
@@ -32,3 +33,8 @@ brew install pandoc poppler tesseract ffmpeg
 brew install efm-langserver
 ## markdown previewer
 brew install glow
+
+# Install packages via npm
+
+## language servers
+npm i -g pyright # python
