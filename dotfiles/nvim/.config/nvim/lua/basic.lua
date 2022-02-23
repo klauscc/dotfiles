@@ -22,6 +22,10 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 
+-- session
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
+
+
 -- Remap space as leader key
 -- vim.api.nvim_set_keymap('', ';', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ';'

@@ -1,3 +1,7 @@
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+
 export PATH=/Users/klaus/usr/local/bin:/Users/klaus/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # >>> conda initialize >>>
@@ -22,9 +26,6 @@ function rssh()
     ssh -N -f -L $port:localhost:$port $host
 }
 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-export CLICOLOR=1
-export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 alias vim="nvim"
 alias ls='ls -GFh'
@@ -39,7 +40,7 @@ alias pro='cd "$HOME/My Drive/projects"'
 alias briss='java -jar ~/Applications/briss-0.9/briss-0.9.jar'
 
 
-alias sshcs="sshpass -p 'pwd' ssh"
+alias sshcs="sshpass -p 'Wscf931023&@' ssh"
 
 conda activate torch-1.9.0
 

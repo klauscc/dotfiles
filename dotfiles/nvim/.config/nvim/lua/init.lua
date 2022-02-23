@@ -21,9 +21,7 @@ require('packer').startup(function()
     use 'tpope/vim-fugitive' -- Git commands in nvim
     use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
     use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
-    use {
-        'ludovicchabant/vim-gutentags' -- Automatic tags management
-    }
+    -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
 
     use 'makerj/vim-pdf'
 
@@ -80,15 +78,37 @@ require('packer').startup(function()
     use 'mbbill/undotree'
 
     -- easy motion
-    use 'Lokaltog/vim-easymotion'
+    -- use 'Lokaltog/vim-easymotion'
+    use 'ggandor/lightspeed.nvim'
 
-    --    markdown
+
+    -- markdown
     use {"ellisonleao/glow.nvim"}
     use {
         'iamcco/markdown-preview.nvim',
         run = function() vim.fn['mkdp#util#install']() end,
         ft = {'markdown'}
     }
+
+    -- auto session
+    use {
+        'rmagatti/auto-session',
+        config = function() require("plugin.auto_session") end
+    }
+
+    -- trouble
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function() require("trouble").setup {} end
+    }
+
+    -- -- doc_string
+    -- use {
+    --     "danymat/neogen",
+    --     config = function() require('neogen').setup {} end,
+    --     requires = "nvim-treesitter/nvim-treesitter"
+    -- }
 
 end)
 

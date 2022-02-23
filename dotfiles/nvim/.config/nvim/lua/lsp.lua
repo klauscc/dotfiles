@@ -3,8 +3,6 @@ local on_attach = function(_, bufnr)
     require"lsp_signature".on_attach()
 
     local opts = {noremap = true, silent = true}
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<lead>jd',
-                                '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd',
                                 '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',

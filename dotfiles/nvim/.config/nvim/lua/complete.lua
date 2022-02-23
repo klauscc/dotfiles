@@ -28,6 +28,7 @@ function M.cmp(use)
                         vim.fn["UltiSnips#Anon"](args.body)
                     end
                 },
+                preselect = cmp.PreselectMode.None,
                 mapping = {
                     ['<C-p>'] = cmp.mapping.select_prev_item(),
                     ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -37,7 +38,7 @@ function M.cmp(use)
                     ['<C-e>'] = cmp.mapping.close(),
                     ['<CR>'] = cmp.mapping.confirm {
                         behavior = cmp.ConfirmBehavior.Replace,
-                        select = true
+                        select = false
                     },
                     ["<Tab>"] = cmp.mapping({
                         c = function()
@@ -112,17 +113,17 @@ function M.cmp(use)
                     {name = 'nvim_lsp'} -- { name = 'luasnip' }, -- For luasnip users.
                 }, {
                     {
-                        name = 'buffer',
-                        option = {
-                            get_bufnrs = function()
-                                local bufs = {}
-                                for _, win in ipairs(vim.api.nvim_list_wins()) do
-                                    bufs[vim.api.nvim_win_get_buf(win)] = true
-                                end
-                                return vim.tbl_keys(bufs)
-                            end
+                        name = 'buffer'
+                        -- option = {
+                        --     get_bufnrs = function()
+                        --         local bufs = {}
+                        --         for _, win in ipairs(vim.api.nvim_list_wins()) do
+                        --             bufs[vim.api.nvim_win_get_buf(win)] = true
+                        --         end
+                        --         return vim.tbl_keys(bufs)
+                        --     end
 
-                        }
+                        -- }
                     }
                 })
             }
