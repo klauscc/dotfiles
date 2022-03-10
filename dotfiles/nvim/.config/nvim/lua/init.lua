@@ -81,7 +81,6 @@ require('packer').startup(function()
     -- use 'Lokaltog/vim-easymotion'
     use 'ggandor/lightspeed.nvim'
 
-
     -- markdown
     use {"ellisonleao/glow.nvim"}
     use {
@@ -109,6 +108,9 @@ require('packer').startup(function()
     --     config = function() require('neogen').setup {} end,
     --     requires = "nvim-treesitter/nvim-treesitter"
     -- }
+
+    -- latex
+    use {"lervag/vimtex", config = function() require("plugin.vimtex") end}
 
 end)
 
