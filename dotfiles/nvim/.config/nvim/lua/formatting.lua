@@ -14,7 +14,8 @@ require"lspconfig".efm.setup {
                     formatStdin = true
                 }
             },
-            json = {{formatCommand = "jq ."}}
+            json = {{formatCommand = "jq ."}},
+            tex = {{formatCommand = "latexindent.pl", formatStdin = true}}
         }
     }
 }

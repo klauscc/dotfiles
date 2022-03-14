@@ -35,20 +35,7 @@ vim.g.nvim_tree_show_icons = {
 -- vim.g.nvim_tree_disable_window_picker = 1
 
 require('nvim-tree').setup {
-    view = {width = 40, auto_resize = true, mappings = {list = list_binds}},
+    actions = {open_file = {enable = false}},
+    view = {width = 40, auto_resize = false, mappings = {list = list_binds}},
     git = {ignore = false}
 }
-
-M = {}
-function M.nvim_tree(use)
-    use { -- File Explorer
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons' -- optional, for file icon
-        },
-        config = function()
-            require'nvim-tree'.setup {actions = {open_file = {enable = false}}}
-        end
-    }
-end
-return M

@@ -40,11 +40,13 @@ alias pro='cd "$HOME/My Drive/projects"'
 alias briss='java -jar ~/Applications/briss-0.9/briss-0.9.jar'
 
 
-alias sshcs="sshpass -p 'Wscf931023&@' ssh"
+alias sshcs="sshpass -f ~/.pwd ssh"
 
 conda activate torch-1.9.0
 
 # for project
 export PYTHONPATH="/Users/klaus/My Drive/projects/video_understanding/temporal-action-detection/vedatad"
+export PYTHONPATH="/Users/klaus/My Drive/projects/video_understanding/temporal-action-detection/SlowFast":$PYTHONPATH
 
 alias mnt_opr='sshfs -o password_stdin,reconnect,follow_symlinks,ServerAliveInterval=15,ServerAliveCountMax=3 fengchan@opr:/home/fengchan/ ~/mnt/opr <<< "Wscf931023&@"'
+export PATH="/Library/TeX/texbin/":$PATH

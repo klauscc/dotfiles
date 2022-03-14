@@ -8,7 +8,7 @@ lua require("init")
 "quickly select pairs.
 map <SPACE> <Plug>(wildfire-fuel)
 vmap <S-SPACE> <Plug>(wildfire-water)
-let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "i`"]
+let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "i`", "i$"]
 
 "undo tree
 set undodir=~/.undo_history/

@@ -4,6 +4,7 @@ M = {}
 function M.cmp(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-cmdline'
+    use {'f3fora/cmp-spell'}
     use {'hrsh7th/cmp-path', commit = 'd83839ae'} -- complete system path.
     use {
         'hrsh7th/nvim-cmp', -- Autocompletion plugin
@@ -106,11 +107,14 @@ function M.cmp(use)
                             end
                         end
                     })
-                },
+                }
+            }
+            cmp.setup.filetype({'python', 'sh', 'lua', 'tex'}, {
                 sources = cmp.config.sources({
                     {name = 'path'}, -- for cmp-path
                     {name = 'ultisnips'}, -- For ultisnips users.
-                    {name = 'nvim_lsp'} -- { name = 'luasnip' }, -- For luasnip users.
+                    {name = 'nvim_lsp'}, -- { name = 'luasnip' }, -- For luasnip users.
+                    {name = 'spell'}
                 }, {
                     {
                         name = 'buffer'
@@ -126,7 +130,8 @@ function M.cmp(use)
                         -- }
                     }
                 })
-            }
+
+            })
             -- Set completeopt to have a better completion experience
             vim.o.completeopt = 'menu,menuone,noselect'
 

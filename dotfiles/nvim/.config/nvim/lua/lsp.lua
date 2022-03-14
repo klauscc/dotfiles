@@ -55,7 +55,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = {'clangd', 'rust_analyzer', 'pyright', 'tsserver'}
+local servers = {'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'texlab'}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
@@ -104,3 +104,60 @@ require('lspconfig').sumneko_lua.setup {
         }
     }
 }
+
+-- require('lspconfig').grammarly.setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     settings = {filetypes = {"markdown", "latex", "tex", "bib"}}
+-- }
+
+-- require("grammar-guard").init()
+-- require("lspconfig").grammar_guard.setup({
+--     cmd = {
+--         '/Users/klaus/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls'
+--     }, -- add this if you install ltex-ls yourself
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     settings = {
+--         ltex = {
+--             enabled = {"latex", "tex", "bib", "markdown"},
+--             language = "en",
+--             diagnosticSeverity = "information",
+--             setenceCacheSize = 2000,
+--             additionalRules = {enablePickyRules = true, motherTongue = "en"},
+--             trace = {server = "verbose"},
+--             dictionary = {},
+--             disabledRules = {},
+--             hiddenFalsePositives = {}
+--         }
+--     },
+--     handlers = {
+--         ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic
+--                                                                .on_publish_diagnostics,
+--                                                            {
+--             -- Disable virtual_text
+--             virtual_text = false
+--         })
+--     }
+-- })
+require("lspconfig").ltex.setup({
+    cmd = {
+        '/Users/klaus/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls'
+    }, -- add this if you install ltex-ls yourself
+    on_attach = on_attach,
+    capabilities = capabilities,
+    handlers = {
+        ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic
+                                                               .on_publish_diagnostics,
+                                                           {
+            -- Disable virtual_text
+            virtual_text = false
+        })
+    },
+    settings = {
+        ltex = {
+            language = "en-US",
+            dictionary = {["en-US"] = {"dictionary.txt"}}
+        }
+    }
+})

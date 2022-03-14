@@ -26,7 +26,13 @@ require('packer').startup(function()
     use 'makerj/vim-pdf'
 
     -- File explorer
-    require('luatree').nvim_tree(use)
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons' -- optional, for file icon
+        },
+        config = function() require('plugin.nvim-tree') end
+    }
 
     -- UI to select things files, grep results, open buffers...)
     require('fuzzy_finder').telescope(use)
@@ -47,6 +53,7 @@ require('packer').startup(function()
     require('complete').cmp(use)
 
     -- LSP
+    use {'williamboman/nvim-lsp-installer'}
     use 'hrsh7th/cmp-nvim-lsp'
     use 'ray-x/lsp_signature.nvim'
     use {'neovim/nvim-lspconfig', config = function() require('lsp') end}
@@ -111,11 +118,14 @@ require('packer').startup(function()
 
     -- latex
     use {"lervag/vimtex", config = function() require("plugin.vimtex") end}
+    use {
+        "brymer-meneses/grammar-guard.nvim",
+        requires = {"neovim/nvim-lspconfig"}
+    }
 
 end)
 
 require('basic')
-require('luatree')
 require('formatting')
 require('complete')
 require('mapping')
