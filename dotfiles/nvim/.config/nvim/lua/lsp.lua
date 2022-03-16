@@ -56,6 +56,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
 local servers = {'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'texlab'}
+-- local servers = { 'texlab' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
@@ -161,3 +162,25 @@ require("lspconfig").ltex.setup({
         }
     }
 })
+
+require"lspconfig".efm.setup {
+    init_options = {documentFormatting = true},
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            lua = {{formatCommand = "lua-format -i", formatStdin = true}},
+            python = {
+                {formatCommand = "black --quiet -", formatStdin = true},
+                {formatCommand = "isort --quiet -", formatStdin = true}
+            },
+            markdown = {
+                {
+                    formatCommand = "pandoc -f markdown -t gfm -sp --tab-stop=4",
+                    formatStdin = true
+                }
+            },
+            json = {{formatCommand = "jq ", formatStdin = true}},
+            tex = {{formatCommand = "latexindent.pl", formatStdin = true}}
+        }
+    }
+}

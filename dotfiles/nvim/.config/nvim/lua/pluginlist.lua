@@ -21,9 +21,7 @@ require('packer').startup(function()
     use 'tpope/vim-fugitive' -- Git commands in nvim
     use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
     use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
-    -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
-
-    use 'makerj/vim-pdf'
+    use 'ludovicchabant/vim-gutentags' -- Automatic tags management
 
     -- File explorer
     use {
@@ -31,17 +29,27 @@ require('packer').startup(function()
         requires = {
             'kyazdani42/nvim-web-devicons' -- optional, for file icon
         },
-        config = function() require('plugin.nvim-tree') end
+        config = function() require("plugin.nvim-tree") end
     }
 
-    -- UI to select things files, grep results, open buffers...)
-    require('fuzzy_finder').telescope(use)
+    -- -- UI to select things files, grep results, open buffers...)
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {'nvim-lua/plenary.nvim'},
+        config = function() require('plugin.telescope') end
+    }
 
     use 'joshdick/onedark.vim' -- Theme inspired by Atom
     use 'itchyny/lightline.vim' -- Fancier statusline
     use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+
     -- Add git related info in the signs columns and popups
-    use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {'nvim-lua/plenary.nvim'},
+        config = function() require("plugin.gitsigns") end
+    }
+
     -- Highlight, edit, and navigate code using a fast incremental parsing library
     use {
         'nvim-treesitter/nvim-treesitter-textobjects',
@@ -51,12 +59,16 @@ require('packer').startup(function()
 
     -- Completion
     require('complete').cmp(use)
+    -- jump out of pairs
+    require('complete').tabout(use)
+    -- Snippets
+    require('complete').ultisnips(use)
 
     -- LSP
     use {'williamboman/nvim-lsp-installer'}
-    use 'hrsh7th/cmp-nvim-lsp'
     use 'ray-x/lsp_signature.nvim'
     use {'neovim/nvim-lspconfig', config = function() require('lsp') end}
+
     -- Tagbar
     use 'majutsushi/tagbar'
 
@@ -65,12 +77,6 @@ require('packer').startup(function()
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup {} end
     }
-
-    -- jump out of pairs
-    require('complete').tabout(use)
-
-    -- Snippets
-    require('complete').ultisnips(use)
 
     -- vim arsync
     use {'kenn7/vim-arsync', config = function() end}
@@ -85,7 +91,6 @@ require('packer').startup(function()
     use 'mbbill/undotree'
 
     -- easy motion
-    -- use 'Lokaltog/vim-easymotion'
     use 'ggandor/lightspeed.nvim'
 
     -- markdown
@@ -109,12 +114,12 @@ require('packer').startup(function()
         config = function() require("trouble").setup {} end
     }
 
-    -- -- doc_string
-    -- use {
-    --     "danymat/neogen",
-    --     config = function() require('neogen').setup {} end,
-    --     requires = "nvim-treesitter/nvim-treesitter"
-    -- }
+    -- doc_string
+    use {
+        "danymat/neogen",
+        config = function() require('neogen').setup {} end,
+        requires = "nvim-treesitter/nvim-treesitter"
+    }
 
     -- latex
     use {"lervag/vimtex", config = function() require("plugin.vimtex") end}
@@ -126,7 +131,5 @@ require('packer').startup(function()
 end)
 
 require('basic')
-require('formatting')
-require('complete')
 require('mapping')
-require('treesitter')
+require('plugin.treesitter')

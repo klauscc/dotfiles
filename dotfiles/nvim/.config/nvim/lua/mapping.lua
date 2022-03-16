@@ -9,8 +9,6 @@ vim.api.nvim_set_keymap('n', '<leader>w', ":w<CR>", {silent = true})
 -- luatree
 vim.api.nvim_set_keymap('n', '<leader>fl', ":NvimTreeToggle<CR>",
                         {silent = true, noremap = true})
-vim.api.nvim_set_keymap('n', '<learder>r', ":NvimTreeRefresh<CR>",
-                        {silent = true, noremap = true})
 
 -- Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'",

@@ -5,7 +5,7 @@ vim.wo.number = true
 -- Enable mouse mode
 vim.o.mouse = 'a'
 -- Enable break indent
--- vim.o.breakindent = true
+vim.o.breakindent = true
 -- Save undo history
 vim.opt.undofile = true
 -- Case insensitive searching UNLESS /C or capital in search
@@ -23,8 +23,8 @@ vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 
 -- session
-vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
-
+vim.o.sessionoptions =
+    "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 -- Remap space as leader key
 -- vim.api.nvim_set_keymap('', ';', '<Nop>', { noremap = true, silent = true })
@@ -44,9 +44,6 @@ vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
 vim.cmd [[colorscheme onedark]]
 
--- ctags
-vim.g.gutentags_exclude_filetypes={'text', 'json'}
-
 -- Set statusbar
 vim.g.lightline = {
     colorscheme = 'onedark',
@@ -64,13 +61,3 @@ vim.g.indent_blankline_filetype_exclude = {'help', 'packer'}
 vim.g.indent_blankline_buftype_exclude = {'terminal', 'nofile'}
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 
--- Gitsigns
-require('gitsigns').setup {
-    signs = {
-        add = {hl = 'GitGutterAdd', text = '+'},
-        change = {hl = 'GitGutterChange', text = '~'},
-        delete = {hl = 'GitGutterDelete', text = '_'},
-        topdelete = {hl = 'GitGutterDelete', text = '‾'},
-        changedelete = {hl = 'GitGutterChange', text = '~'}
-    }
-}
