@@ -6,7 +6,7 @@ commands:
   - command: notepad
     arguments:
       - ${INPUT}
-    title: メモ帳
+    title: no action
 
 tools:
   eruby-erb: &eruby-erb

@@ -35,7 +35,7 @@ local list = {
   { key = "]c",                           action = "next_git_item" },
   { key = "-",                            action = "dir_up" },
   { key = "q",                            action = "close" },
-  { key = "g?",                           action = "toggle_help" },
+  { key = "?",                           action = "toggle_help" },
   { key = "W",                            action = "collapse_all" },
   { key = "<C-k>",                        action = "toggle_file_info" },
   { key = ".",                            action = "run_file_command" }

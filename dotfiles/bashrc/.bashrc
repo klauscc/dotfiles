@@ -34,8 +34,8 @@ alias brevent="adb -d shell sh /data/data/me.piebridge.brevent/brevent.sh"
 
 # alias for folders
 alias paper='cd "$HOME/My Drive/deeplearning/papers"'
-alias sem5='cd "$HOME/My Drive/timeline/20210813-20220112UNC-5semester"'
 alias pro='cd "$HOME/My Drive/projects"'
+alias gd='cd "$HOME/My Drive/timeline/PhD-with-gedas"'
 
 alias briss='java -jar ~/Applications/briss-0.9/briss-0.9.jar'
 

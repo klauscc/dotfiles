@@ -1,0 +1,1 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAlso, another thing that we'll do this week is to get feedback on the submitted ECCV drafts.\\E$"}

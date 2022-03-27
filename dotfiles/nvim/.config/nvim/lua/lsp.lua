@@ -1,3 +1,5 @@
+lspconfig = require("lspconfig")
+
 local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     require"lsp_signature".on_attach()
@@ -112,35 +114,7 @@ require('lspconfig').sumneko_lua.setup {
 --     settings = {filetypes = {"markdown", "latex", "tex", "bib"}}
 -- }
 
--- require("grammar-guard").init()
--- require("lspconfig").grammar_guard.setup({
---     cmd = {
---         '/Users/klaus/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls'
---     }, -- add this if you install ltex-ls yourself
---     on_attach = on_attach,
---     capabilities = capabilities,
---     settings = {
---         ltex = {
---             enabled = {"latex", "tex", "bib", "markdown"},
---             language = "en",
---             diagnosticSeverity = "information",
---             setenceCacheSize = 2000,
---             additionalRules = {enablePickyRules = true, motherTongue = "en"},
---             trace = {server = "verbose"},
---             dictionary = {},
---             disabledRules = {},
---             hiddenFalsePositives = {}
---         }
---     },
---     handlers = {
---         ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic
---                                                                .on_publish_diagnostics,
---                                                            {
---             -- Disable virtual_text
---             virtual_text = false
---         })
---     }
--- })
+local ltex_custom_config=require("plugin.ltex")
 require("lspconfig").ltex.setup({
     cmd = {
         '/Users/klaus/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls'
@@ -155,13 +129,10 @@ require("lspconfig").ltex.setup({
             virtual_text = false
         })
     },
-    settings = {
-        ltex = {
-            language = "en-US",
-            dictionary = {["en-US"] = {"dictionary.txt"}}
-        }
-    }
+    settings = ltex_custom_config.lspconfig_settings()
 })
+require("plugin.ltex").configure()
+
 
 require"lspconfig".efm.setup {
     init_options = {documentFormatting = true},

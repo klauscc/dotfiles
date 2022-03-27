@@ -128,6 +128,9 @@ require('packer').startup(function()
         requires = {"neovim/nvim-lspconfig"}
     }
 
+    -- cursorline
+    use { 'yamatsum/nvim-cursorline' }
+
 end)
 
 require('basic')
