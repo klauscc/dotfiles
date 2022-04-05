@@ -31,11 +31,12 @@ alias vim="nvim"
 alias ls='ls -GFh'
 alias ll="ls -l"
 alias brevent="adb -d shell sh /data/data/me.piebridge.brevent/brevent.sh"
+alias ds="pmset displaysleepnow"
 
 # alias for folders
 alias paper='cd "$HOME/My Drive/deeplearning/papers"'
 alias pro='cd "$HOME/My Drive/projects"'
-alias gd='cd "$HOME/My Drive/timeline/PhD-with-gedas"'
+alias gb='cd "$HOME/My Drive/timeline/PhD-with-gedas"'
 
 alias briss='java -jar ~/Applications/briss-0.9/briss-0.9.jar'
 

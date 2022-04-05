@@ -3,14 +3,6 @@ local t = function(str)
 end
 local cmp = require 'cmp'
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {sources = {{name = 'buffer'}}})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-
-cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({{name = 'path'}}, {{name = 'cmdline'}})
-})
 cmp.setup {
     snippet = {expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end},
     preselect = cmp.PreselectMode.None,
@@ -81,9 +73,7 @@ cmp.setup {
                 end
             end
         })
-    }
-}
-cmp.setup.filetype({'python', 'sh', 'lua', 'tex'}, {
+    },
     sources = cmp.config.sources({
         {name = 'path'}, -- for cmp-path
         {name = 'ultisnips'}, -- For ultisnips users.
@@ -104,9 +94,40 @@ cmp.setup.filetype({'python', 'sh', 'lua', 'tex'}, {
             -- }
         }
     })
+}
 
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline('/', {sources = {{name = 'buffer'}}})
 
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+
+cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({{name = 'path'}}, {{name = 'cmdline'}})
 })
+
+-- cmp.setup.filetype({'python', 'sh', 'lua', 'tex'}, {
+--     sources = cmp.config.sources({
+--         {name = 'path'}, -- for cmp-path
+--         {name = 'ultisnips'}, -- For ultisnips users.
+--         {name = 'nvim_lsp'}, -- { name = 'luasnip' }, -- For luasnip users.
+--         {name = 'spell'}
+--     }, {
+--         {
+--             name = 'buffer'
+--             -- option = {
+--             --     get_bufnrs = function()
+--             --         local bufs = {}
+--             --         for _, win in ipairs(vim.api.nvim_list_wins()) do
+--             --             bufs[vim.api.nvim_win_get_buf(win)] = true
+--             --         end
+--             --         return vim.tbl_keys(bufs)
+--             --     end
+
+--             -- }
+--         }
+--     })
+
+-- })
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect'

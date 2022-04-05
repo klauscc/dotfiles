@@ -127,12 +127,17 @@ M = {}
 function M.lspconfig_settings()
     return {
         ltex = {
-            enabled = {"latex", "tex", "bib", "md", "markdown"},
+            -- enabled = {"latex", "tex", "bib", "md", "markdown"},
+            enabled = {"latex", "tex", "bib"},
             checkFrequency = "save",
             language = "en-US",
             diagnosticSeverity = "information",
             setenceCacheSize = 5000,
-            additionalRules = {enablePickyRules = true, motherTongue = "en-US"},
+            additionalRules = {
+                enablePickyRules = true,
+                -- motherTongue = "en-US",
+                -- languageModel = '~/Documents/ngram'
+            },
             -- trace = { server = "verbose"};
             -- ['ltex-ls'] = {
             --     logLevel = "finest",

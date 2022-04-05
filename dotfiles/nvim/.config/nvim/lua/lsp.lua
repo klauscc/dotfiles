@@ -57,7 +57,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = {'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'texlab'}
+-- local servers = {'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'texlab'}
+local servers = {'clangd', 'rust_analyzer', 'pyright', 'tsserver'}
 -- local servers = { 'texlab' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
