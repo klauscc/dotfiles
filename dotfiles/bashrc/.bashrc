@@ -38,7 +38,7 @@ alias paper='cd "$HOME/My Drive/deeplearning/papers"'
 alias pro='cd "$HOME/My Drive/projects"'
 alias gb='cd "$HOME/My Drive/timeline/PhD-with-gedas"'
 
-alias briss='java -jar ~/Applications/briss-0.9/briss-0.9.jar'
+alias briss='/Users/klaus/usr/local/Briss-2.0/bin/Briss-2.0'
 
 
 alias sshcs="sshpass -f ~/.pwd ssh"

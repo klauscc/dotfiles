@@ -6,6 +6,42 @@ local cmp = require 'cmp'
 cmp.setup {
     snippet = {expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end},
     preselect = cmp.PreselectMode.None,
+    sources = cmp.config.sources({
+        -- {name = 'path'}, -- for cmp-path
+        {name = 'ultisnips'}, -- For ultisnips users.
+        {name = 'nvim_lsp'}, -- { name = 'luasnip' }, -- For luasnip users.
+        {name = 'fuzzy_path'}, {
+            name = 'fuzzy_buffer',
+            option = {
+                get_bufnrs = function()
+                    local bufs = {}
+                    for _, win in ipairs(vim.api.nvim_list_wins()) do
+                        bufs[vim.api.nvim_win_get_buf(win)] = true
+                    end
+                    return vim.tbl_keys(bufs)
+                end
+            }
+        }, {name = 'spell'}, {name = 'neorg'}
+    }),
+    formatting = {
+        format = require("lspkind").cmp_format({
+            mode = 'symbol_text', -- show only symbol annotations
+            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+
+            -- The function below will be called before any actual modifications from lspkind
+            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+            before = function(entry, vim_item)
+                vim_item.menu = ({
+                    nvim_lsp = "[LSP]",
+                    ultisnips = "[Snippet]",
+                    fuzzy_buffer = "[Buffer]",
+                    fuzzy_path = "[Path]",
+                    neorg = "[Norg]"
+                })[entry.source.name]
+                return vim_item
+            end
+        })
+    },
     mapping = {
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -73,36 +109,16 @@ cmp.setup {
                 end
             end
         })
-    },
-    sources = cmp.config.sources({
-        {name = 'path'}, -- for cmp-path
-        {name = 'ultisnips'}, -- For ultisnips users.
-        {name = 'nvim_lsp'}, -- { name = 'luasnip' }, -- For luasnip users.
-        {name = 'spell'}
-    }, {
-        {
-            name = 'buffer'
-            -- option = {
-            --     get_bufnrs = function()
-            --         local bufs = {}
-            --         for _, win in ipairs(vim.api.nvim_list_wins()) do
-            --             bufs[vim.api.nvim_win_get_buf(win)] = true
-            --         end
-            --         return vim.tbl_keys(bufs)
-            --     end
-
-            -- }
-        }
-    })
+    }
 }
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {sources = {{name = 'buffer'}}})
+cmp.setup.cmdline('/', {sources = {{name = 'fuzzy_buffer'}}})
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 
 cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({{name = 'path'}}, {{name = 'cmdline'}})
+    sources = cmp.config.sources({{name = 'fuzzy_path'}}, {{name = 'cmdline'}})
 })
 
 -- cmp.setup.filetype({'python', 'sh', 'lua', 'tex'}, {

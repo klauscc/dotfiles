@@ -49,9 +49,11 @@ vim.g.nvim_tree_show_icons = {
 }
 
 -- vim.g.nvim_tree_disable_window_picker = 1
+vim.g.nvim_tree_highlight_opened_files = 1
 
 require('nvim-tree').setup {
-    actions = {open_file = {enable = false}},
-    view = {width = 40, auto_resize = false, mappings = {list = list, custom_only=true}},
+    actions = {},
+    update_cwd = true,
+    view = {width = 40, mappings = {list = list, custom_only=true}},
     git = {ignore = false}
 }

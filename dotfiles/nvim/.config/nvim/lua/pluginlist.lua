@@ -33,6 +33,7 @@ require('packer').startup(function()
     }
 
     -- -- UI to select things files, grep results, open buffers...)
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
     use {
         'nvim-telescope/telescope.nvim',
         requires = {'nvim-lua/plenary.nvim'},
@@ -63,6 +64,14 @@ require('packer').startup(function()
     require('complete').tabout(use)
     -- Snippets
     require('complete').ultisnips(use)
+    use {
+        'tzachar/cmp-fuzzy-path',
+        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
+    }
+    use {
+        'tzachar/cmp-fuzzy-buffer',
+        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
+    }
 
     -- LSP
     use {'williamboman/nvim-lsp-installer'}
@@ -129,7 +138,24 @@ require('packer').startup(function()
     }
 
     -- cursorline
-    use { 'yamatsum/nvim-cursorline' }
+    use {'yamatsum/nvim-cursorline'}
+
+    -- orgmode
+    use {
+        "nvim-neorg/neorg",
+        config = function() require("plugin.neorg") end,
+        requires = "nvim-lua/plenary.nvim"
+    }
+    use {
+        "folke/zen-mode.nvim",
+        config = function() require("zen-mode").setup {} end
+    }
+
+    -- workspace
+    use {
+        'natecraddock/workspaces.nvim',
+        config = function() require("plugin.workspaces") end
+    }
 
 end)
 
