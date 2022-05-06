@@ -10,7 +10,9 @@ cmp.setup {
         -- {name = 'path'}, -- for cmp-path
         {name = 'ultisnips'}, -- For ultisnips users.
         {name = 'nvim_lsp'}, -- { name = 'luasnip' }, -- For luasnip users.
-        {name = 'fuzzy_path'}, {
+        {name = 'fuzzy_path'}
+    }, {
+        {
             name = 'fuzzy_buffer',
             option = {
                 get_bufnrs = function()
