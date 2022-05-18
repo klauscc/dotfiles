@@ -1,10 +1,7 @@
 #!/usr/bin/env sh
 
-# Package manager on macOS
-## install brew
-if ! type "brew" > /dev/null; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
+# install brew
+. ./install_brew.sh
 
 # Languages
 ## install nodejs
@@ -31,6 +28,8 @@ brew install rga
 brew install pandoc poppler tesseract ffmpeg
 ## formatter and linter
 brew install efm-langserver
+brew install lua-language-server
+
 ## markdown previewer
 brew install glow
 
