@@ -4,13 +4,14 @@ end
 local cmp = require 'cmp'
 
 cmp.setup {
-    snippet = {expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end},
+    snippet = { expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end },
     preselect = cmp.PreselectMode.None,
     sources = cmp.config.sources({
-        -- {name = 'path'}, -- for cmp-path
-        {name = 'ultisnips'}, -- For ultisnips users.
-        {name = 'nvim_lsp'}, -- { name = 'luasnip' }, -- For luasnip users.
-        {name = 'fuzzy_path'}
+        { name = 'path' }, -- for cmp-path
+        -- { name = 'buffer' },
+        { name = 'ultisnips' }, -- For ultisnips users.
+        { name = 'nvim_lsp' }, -- { name = 'luasnip' }, -- For luasnip users.
+        { name = 'fuzzy_path' }
     }, {
         {
             name = 'fuzzy_buffer',
@@ -23,7 +24,7 @@ cmp.setup {
                     return vim.tbl_keys(bufs)
                 end
             }
-        }, {name = 'spell'}, {name = 'neorg'}
+        }, { name = 'spell' }, { name = 'neorg' }
     }),
     formatting = {
         format = require("lspkind").cmp_format({
@@ -36,8 +37,10 @@ cmp.setup {
                 vim_item.menu = ({
                     nvim_lsp = "[LSP]",
                     ultisnips = "[Snippet]",
-                    fuzzy_buffer = "[Buffer]",
-                    fuzzy_path = "[Path]",
+                    buffer = "[Buffer]",
+                    path = "[Path]",
+                    fuzzy_buffer = "[Fuzzy Buffer]",
+                    fuzzy_path = "[Fuzzy Path]",
                     neorg = "[Norg]"
                 })[entry.source.name]
                 return vim_item
@@ -58,17 +61,17 @@ cmp.setup {
         ["<Tab>"] = cmp.mapping({
             c = function()
                 if cmp.visible() then
-                    cmp.select_next_item({behavior = cmp.SelectBehavior.Insert})
+                    cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
                 else
                     cmp.complete()
                 end
             end,
             i = function(fallback)
                 if cmp.visible() then
-                    cmp.select_next_item({behavior = cmp.SelectBehavior.Insert})
+                    cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
                 elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
                     vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"),
-                                          'm', true)
+                        'm', true)
                 else
                     fallback()
                 end
@@ -76,7 +79,7 @@ cmp.setup {
             s = function(fallback)
                 if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
                     vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"),
-                                          'm', true)
+                        'm', true)
                 else
                     fallback()
                 end
@@ -85,18 +88,18 @@ cmp.setup {
         ["<S-Tab>"] = cmp.mapping({
             c = function()
                 if cmp.visible() then
-                    cmp.select_prev_item({behavior = cmp.SelectBehavior.Insert})
+                    cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
                 else
                     cmp.complete()
                 end
             end,
             i = function(fallback)
                 if cmp.visible() then
-                    cmp.select_prev_item({behavior = cmp.SelectBehavior.Insert})
+                    cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
                 elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
                     return vim.api.nvim_feedkeys(t(
-                                                     "<Plug>(ultisnips_jump_backward)"),
-                                                 'm', true)
+                        "<Plug>(ultisnips_jump_backward)"),
+                        'm', true)
                 else
                     fallback()
                 end
@@ -104,8 +107,8 @@ cmp.setup {
             s = function(fallback)
                 if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
                     return vim.api.nvim_feedkeys(t(
-                                                     "<Plug>(ultisnips_jump_backward)"),
-                                                 'm', true)
+                        "<Plug>(ultisnips_jump_backward)"),
+                        'm', true)
                 else
                     fallback()
                 end
@@ -115,12 +118,12 @@ cmp.setup {
 }
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {sources = {{name = 'fuzzy_buffer'}}})
+cmp.setup.cmdline('/', { sources = { { name = 'fuzzy_buffer' } } })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 
 cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({{name = 'fuzzy_path'}}, {{name = 'cmdline'}})
+    sources = cmp.config.sources({ { name = 'fuzzy_path' } }, { { name = 'cmdline' } })
 })
 
 -- cmp.setup.filetype({'python', 'sh', 'lua', 'tex'}, {

@@ -53,7 +53,7 @@ alias briss='/Users/klaus/usr/local/Briss-2.0/bin/Briss-2.0'
 
 alias sshcs="sshpass -f ~/.pwd ssh"
 
-conda activate torch-1.9.0
+conda activate torch
 
 # for project
 export PYTHONPATH="/Users/klaus/My Drive/projects/video_understanding/temporal-action-detection/vedatad"

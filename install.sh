@@ -25,6 +25,7 @@ brew install neovim
 ##  fuzzy finders
 brew install ripgrep
 brew install rga
+brew install fd
 brew install pandoc poppler tesseract ffmpeg
 ## formatter and linter
 brew install efm-langserver
