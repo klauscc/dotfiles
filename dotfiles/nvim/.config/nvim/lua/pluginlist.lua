@@ -1,10 +1,10 @@
 -- Install packer
 local install_path = vim.fn.stdpath 'data' ..
-                         '/site/pack/packer/start/packer.nvim'
+    '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' ..
-                       install_path)
+        install_path)
 end
 
 vim.cmd [[
@@ -21,7 +21,7 @@ require('packer').startup(function()
     -- use 'tpope/vim-fugitive' -- Git commands in nvim
     use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
     use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
-    use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+    -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
 
     -- File explorer
     use {
@@ -33,10 +33,10 @@ require('packer').startup(function()
     }
 
     -- -- UI to select things files, grep results, open buffers...)
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {
         'nvim-telescope/telescope.nvim',
-        requires = {'nvim-lua/plenary.nvim'},
+        requires = { 'nvim-lua/plenary.nvim' },
         config = function() require('plugin.telescope') end
     }
 
@@ -47,7 +47,7 @@ require('packer').startup(function()
     -- Add git related info in the signs columns and popups
     use {
         'lewis6991/gitsigns.nvim',
-        requires = {'nvim-lua/plenary.nvim'},
+        requires = { 'nvim-lua/plenary.nvim' },
         config = function() require("plugin.gitsigns") end
     }
 
@@ -66,17 +66,17 @@ require('packer').startup(function()
     require('complete').ultisnips(use)
     use {
         'tzachar/cmp-fuzzy-path',
-        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
+        requires = { 'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim' }
     }
     use {
         'tzachar/cmp-fuzzy-buffer',
-        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
+        requires = { 'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim' }
     }
 
     -- LSP
-    use {'williamboman/nvim-lsp-installer'}
+    use { 'williamboman/nvim-lsp-installer' }
     use 'ray-x/lsp_signature.nvim'
-    use {'neovim/nvim-lspconfig', config = function() require('lsp') end}
+    use { 'neovim/nvim-lspconfig', config = function() require('lsp') end }
 
     -- Tagbar
     use 'majutsushi/tagbar'
@@ -88,7 +88,7 @@ require('packer').startup(function()
     }
 
     -- vim arsync
-    use {'kenn7/vim-arsync', config = function() end}
+    use { 'kenn7/vim-arsync', config = function() end }
 
     -- multi cursors
     use 'mg979/vim-visual-multi'
@@ -103,11 +103,11 @@ require('packer').startup(function()
     use 'ggandor/lightspeed.nvim'
 
     -- markdown
-    use {"ellisonleao/glow.nvim"}
+    use { "ellisonleao/glow.nvim" }
     use {
         'iamcco/markdown-preview.nvim',
         run = function() vim.fn['mkdp#util#install']() end,
-        ft = {'markdown'}
+        ft = { 'markdown' }
     }
 
     -- auto session
@@ -131,10 +131,10 @@ require('packer').startup(function()
     }
 
     -- latex
-    use {"lervag/vimtex", config = function() require("plugin.vimtex") end}
+    use { "lervag/vimtex", config = function() require("plugin.vimtex") end }
     use {
         "brymer-meneses/grammar-guard.nvim",
-        requires = {"neovim/nvim-lspconfig"}
+        requires = { "neovim/nvim-lspconfig" }
     }
 
     -- cursorline
@@ -142,11 +142,11 @@ require('packer').startup(function()
         'yamatsum/nvim-cursorline',
         config = function()
             require('nvim-cursorline').setup {
-                cursorline = {enable = true, timeout = 1000, number = false},
+                cursorline = { enable = true, timeout = 1000, number = false },
                 cursorword = {
                     enable = true,
                     min_length = 3,
-                    hl = {underline = true}
+                    hl = { underline = true }
                 }
 
             }

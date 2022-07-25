@@ -19,7 +19,7 @@ vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'",
 -- Telescope
 -- Add leader shortcuts
 vim.api.nvim_set_keymap('n', '<leader><space>',
-                        [[<cmd>lua require('telescope.builtin').buffers()<CR>]],
+                        [[<cmd>lua require('telescope.builtin').buffers({sort_lastused=true})<CR>]],
                         {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>sf',
                         [[<cmd>lua require('telescope.builtin').find_files({previewer = false, no_ignore = true, hidden=true})<CR>]],

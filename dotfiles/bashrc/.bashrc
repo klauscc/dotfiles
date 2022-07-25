@@ -36,6 +36,14 @@ function rssh()
     ssh -N -f -L $port:localhost:$port $host
 }
 
+function dld()
+{
+    host=$1
+    dir=$2
+    dst_dir=$3
+    ssh $host "cd $dir; tar -czf - $dst_dir" | tar zxf -
+}
+
 
 alias vim="nvim"
 alias ls='ls -GFh'
