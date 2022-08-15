@@ -7,23 +7,25 @@ cmp.setup {
     snippet = {expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end},
     preselect = cmp.PreselectMode.None,
     sources = cmp.config.sources({
-        -- {name = 'path'}, -- for cmp-path
+        {name = 'path'}, -- for cmp-path
         {name = 'ultisnips'}, -- For ultisnips users.
         {name = 'nvim_lsp'}, -- { name = 'luasnip' }, -- For luasnip users.
-        {name = 'fuzzy_path'}
-    }, {
+        -- {name = 'fuzzy_path'}
+    },
         {
-            name = 'fuzzy_buffer',
-            option = {
-                get_bufnrs = function()
-                    local bufs = {}
-                    for _, win in ipairs(vim.api.nvim_list_wins()) do
-                        bufs[vim.api.nvim_win_get_buf(win)] = true
-                    end
-                    return vim.tbl_keys(bufs)
-                end
-            }
-        }, {name = 'spell'}, {name = 'neorg'}
+        -- {
+        --     name = 'fuzzy_buffer',
+        --     option = {
+        --         get_bufnrs = function()
+        --             local bufs = {}
+        --             for _, win in ipairs(vim.api.nvim_list_wins()) do
+        --                 bufs[vim.api.nvim_win_get_buf(win)] = true
+        --             end
+        --             return vim.tbl_keys(bufs)
+        --         end
+        --     }
+        -- }, 
+            {name = 'spell'}, {name = 'neorg'}, {name='buffer'}
     }),
     formatting = {
         format = require("lspkind").cmp_format({
@@ -36,8 +38,8 @@ cmp.setup {
                 vim_item.menu = ({
                     nvim_lsp = "[LSP]",
                     ultisnips = "[Snippet]",
-                    fuzzy_buffer = "[Buffer]",
-                    fuzzy_path = "[Path]",
+                    buffer = "[Buffer]",
+                    path = "[Path]",
                     neorg = "[Norg]"
                 })[entry.source.name]
                 return vim_item

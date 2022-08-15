@@ -11,3 +11,5 @@ lg = !"git lg1"
 	postBuffer = 524288000
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main
