@@ -51,3 +51,5 @@ export PYTHONPATH="/Users/klaus/My Drive/projects/video_understanding/temporal-a
 
 alias mnt_opr='sshfs -o password_stdin,reconnect,follow_symlinks,ServerAliveInterval=15,ServerAliveCountMax=3 fengchan@opr:/home/fengchan/ ~/mnt/opr <<< "Wscf931023&@"'
 export PATH="/Library/TeX/texbin/":$PATH
+export PYTHONPATH="/Users/klaus/My Drive/projects/st-clip/singularity":$PYTHONPATH
+. "$HOME/.cargo/env"

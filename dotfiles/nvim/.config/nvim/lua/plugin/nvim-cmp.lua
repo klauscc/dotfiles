@@ -10,9 +10,12 @@ cmp.setup {
         {name = 'path'}, -- for cmp-path
         {name = 'ultisnips'}, -- For ultisnips users.
         {name = 'nvim_lsp'}, -- { name = 'luasnip' }, -- For luasnip users.
-        -- {name = 'fuzzy_path'}
-    },
-        {
+        {name = 'omni', keyword_length = 0}
+        -- {
+        --     name = 'fuzzy_path',
+        --     options = {fd_timeout_msec = 50, fd_cmd = {'fd', '-d', '4', '-p'}}
+        -- }
+    }, {
         -- {
         --     name = 'fuzzy_buffer',
         --     option = {
@@ -24,8 +27,8 @@ cmp.setup {
         --             return vim.tbl_keys(bufs)
         --         end
         --     }
-        -- }, 
-            {name = 'spell'}, {name = 'neorg'}, {name='buffer'}
+        -- },
+        {name = 'spell'}, {name = 'neorg'}, {name = 'buffer'}
     }),
     formatting = {
         format = require("lspkind").cmp_format({
@@ -40,7 +43,8 @@ cmp.setup {
                     ultisnips = "[Snippet]",
                     buffer = "[Buffer]",
                     path = "[Path]",
-                    neorg = "[Norg]"
+                    neorg = "[Norg]",
+                    omni = (vim.inspect(vim_item.menu):gsub('%"', ""))
                 })[entry.source.name]
                 return vim_item
             end

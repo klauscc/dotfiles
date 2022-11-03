@@ -12,7 +12,7 @@ require('neorg').setup {
         },
         ["core.gtd.base"] = {config = {workspace = "gtd"}},
         ["core.norg.completion"] = {config = {engine = "nvim-cmp"}},
-        ["core.norg.concealer"] = {config = {icon_preset = "diamond"}},
+        ["core.norg.concealer"] = {config = {icon_preset = "diamond", conceal=false}},
         ["core.presenter"] = {config = {zen_mode = "zen-mode"}}
     }
 }

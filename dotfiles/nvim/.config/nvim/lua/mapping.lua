@@ -27,6 +27,9 @@ vim.api.nvim_set_keymap('n', '<leader>sf',
 vim.api.nvim_set_keymap('n', '<leader>sb',
                         [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]],
                         {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>sw',
+                        [[<cmd>lua require("telescope").extensions.windows.list() <CR>]],
+                        {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>sh',
                         [[<cmd>lua require('telescope.builtin').help_tags()<CR>]],
                         {noremap = true, silent = true})
@@ -51,7 +54,7 @@ vim.api.nvim_set_keymap('n', '<leader>fu', ":ARsyncUp<CR>",
                         {noremap = true, silent = true})
 
 -- Tagbar
-vim.api.nvim_set_keymap('n', '<leader>lt', ":TagbarToggle<CR>",
+vim.api.nvim_set_keymap('n', '<leader>lt', ":SymbolsOutline<CR>",
                         {noremap = true, silent = true})
 
 -- open files

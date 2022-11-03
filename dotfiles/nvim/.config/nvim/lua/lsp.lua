@@ -1,7 +1,9 @@
 lspconfig = require("lspconfig")
 
 local on_attach = function(_, bufnr)
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+-- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
     require"lsp_signature".on_attach()
 
     local opts = {noremap = true, silent = true}
@@ -47,18 +49,21 @@ local on_attach = function(_, bufnr)
                                 [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
                                 opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'cf',
-                                '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+                                '<cmd>lua vim.lsp.buf.format { async = true }<CR>',
+                                opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'cf',
+    --                             '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
 end
 local nvim_lsp = require 'lspconfig'
 
 -- nvim-cmp supports additional completion capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Enable the following language servers
 -- local servers = {'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'texlab'}
-local servers = {'clangd', 'rust_analyzer', 'pyright', 'tsserver'}
+local servers = {'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls'}
 -- local servers = { 'texlab' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
@@ -115,7 +120,7 @@ require('lspconfig').sumneko_lua.setup {
 --     settings = {filetypes = {"markdown", "latex", "tex", "bib"}}
 -- }
 
-local ltex_custom_config=require("plugin.ltex")
+local ltex_custom_config = require("plugin.ltex")
 require("lspconfig").ltex.setup({
     cmd = {
         '/Users/klaus/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls'
@@ -134,7 +139,6 @@ require("lspconfig").ltex.setup({
 })
 require("plugin.ltex").configure()
 
-
 require"lspconfig".efm.setup {
     init_options = {documentFormatting = true},
     settings = {
@@ -152,7 +156,8 @@ require"lspconfig".efm.setup {
                 }
             },
             json = {{formatCommand = "jq ", formatStdin = true}},
-            tex = {{formatCommand = "latexindent.pl", formatStdin = true}}
+            tex = {{formatCommand = "latexindent.pl", formatStdin = true}},
+            sh = {{formatCommand = "shfmt -ci -s -bn", formatStdin = true}}
         }
     }
 }

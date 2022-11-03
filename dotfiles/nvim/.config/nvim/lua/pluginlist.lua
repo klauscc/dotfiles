@@ -40,6 +40,22 @@ require('packer').startup(function()
         config = function() require('plugin.telescope') end
     }
 
+    use {
+        'kyoh86/telescope-windows.nvim',
+        requires = {'nvim-telescope/telescope.nvim'},
+        config = function()
+            require'telescope'.setup {
+                extensions = {
+                    windows = {
+                        -- you can set options for this extension here (like below)
+                        -- previewer = false
+                    }
+                }
+            }
+            require'telescope'.load_extension 'windows'
+        end
+    }
+
     use 'joshdick/onedark.vim' -- Theme inspired by Atom
     use 'itchyny/lightline.vim' -- Fancier statusline
     use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
@@ -79,7 +95,17 @@ require('packer').startup(function()
     use {'neovim/nvim-lspconfig', config = function() require('lsp') end}
 
     -- Tagbar
-    use 'majutsushi/tagbar'
+    -- use 'majutsushi/tagbar'
+    use {
+        'simrat39/symbols-outline.nvim',
+        config = function()
+            require('symbols-outline').setup({
+                autofold_depth = 2,
+                width = 16,
+                auto_unfold_hover = false
+            })
+        end
+    }
 
     -- Autopairs
     use {
@@ -131,7 +157,12 @@ require('packer').startup(function()
     }
 
     -- latex
-    use {"lervag/vimtex", config = function() require("plugin.vimtex") end}
+    use {
+        "lervag/vimtex",
+        tag = '*',
+        config = function() require("plugin.vimtex") end,
+        after='nvim-cmp'
+    }
     use {
         "brymer-meneses/grammar-guard.nvim",
         requires = {"neovim/nvim-lspconfig"}
@@ -156,6 +187,7 @@ require('packer').startup(function()
     -- orgmode
     use {
         "nvim-neorg/neorg",
+        run = ":Neorg sync-parsers",
         config = function() require("plugin.neorg") end,
         requires = "nvim-lua/plenary.nvim"
     }

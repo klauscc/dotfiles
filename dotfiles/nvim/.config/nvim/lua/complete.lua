@@ -8,6 +8,7 @@ function M.cmp(use)
     use {'f3fora/cmp-spell'}
     use {'hrsh7th/cmp-path', commit = 'd83839ae'} -- complete system path.
     use {'onsails/lspkind.nvim'}
+    use {'hrsh7th/cmp-omni'}
     use {
         'hrsh7th/nvim-cmp', -- Autocompletion plugin
         config = function() require("plugin.nvim-cmp") end
