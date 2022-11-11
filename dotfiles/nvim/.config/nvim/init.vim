@@ -27,4 +27,6 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "i`", "i$"]
 "     autocmd FileType python,markdown setlocal foldexpr=nvim_treesitter#foldexpr()
 " augroup END
 
-autocmd FileType tex set omnifunc=vimtex#complete#omnifunc
+" autocmd FileType tex set omnifunc=vimtex#complete#omnifunc
+
+" pop ui

@@ -161,7 +161,7 @@ require('packer').startup(function()
         "lervag/vimtex",
         tag = '*',
         config = function() require("plugin.vimtex") end,
-        after='nvim-cmp'
+        after = 'nvim-cmp'
     }
     use {
         "brymer-meneses/grammar-guard.nvim",
@@ -210,6 +210,15 @@ require('packer').startup(function()
             require('nvim-terminal').setup()
         end
     }
+
+    -- ui
+    -- use {
+    --     "hood/popui.nvim",
+    --     config = function()
+    --         vim.ui.select = require "popui.ui-overrider"
+    --         vim.ui.input = require "popui.input-overrider"
+    --     end
+    -- }
 
 end)
 

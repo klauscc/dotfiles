@@ -9,8 +9,7 @@ cmp.setup {
     sources = cmp.config.sources({
         {name = 'path'}, -- for cmp-path
         {name = 'ultisnips'}, -- For ultisnips users.
-        {name = 'nvim_lsp'}, -- { name = 'luasnip' }, -- For luasnip users.
-        {name = 'omni', keyword_length = 0}
+        {name = 'nvim_lsp'} -- { name = 'luasnip' }, -- For luasnip users.
         -- {
         --     name = 'fuzzy_path',
         --     options = {fd_timeout_msec = 50, fd_cmd = {'fd', '-d', '4', '-p'}}
@@ -28,7 +27,7 @@ cmp.setup {
         --         end
         --     }
         -- },
-        {name = 'spell'}, {name = 'neorg'}, {name = 'buffer'}
+        {name = 'neorg'}, {name = 'buffer'}
     }),
     formatting = {
         format = require("lspkind").cmp_format({
@@ -119,6 +118,11 @@ cmp.setup {
         })
     }
 }
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype({'tex', 'markdown'}, {
+    sources = cmp.config.sources({{name = 'omni'}, {name = 'spell'}})
+})
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {sources = {{name = 'fuzzy_buffer'}}})
