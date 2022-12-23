@@ -41,10 +41,11 @@ local list = {
 require('nvim-tree').setup {
     actions = {},
     update_cwd = true,
+    update_focused_file = {enable = false},
     view = {width = 40, mappings = {list = list, custom_only = true}},
     git = {ignore = false},
     renderer = {
-        highlight_opened_files="icon",
+        highlight_opened_files = "icon",
         icons = {
             show = {
                 git = false,

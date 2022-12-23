@@ -121,7 +121,10 @@ cmp.setup {
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype({'tex', 'markdown'}, {
-    sources = cmp.config.sources({{name = 'omni'}, {name = 'spell'}})
+    sources = cmp.config.sources({
+        {name = 'buffer'}, {name = 'omni'}, {name = 'ultisnips'}, -- For ultisnips users.
+        {name = 'nvim_lsp'}
+    })
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).

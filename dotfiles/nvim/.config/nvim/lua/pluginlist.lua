@@ -129,7 +129,7 @@ require('packer').startup(function()
     use 'ggandor/lightspeed.nvim'
 
     -- markdown
-    use {"ellisonleao/glow.nvim"}
+    -- use {"ellisonleao/glow.nvim"}
     use {
         'iamcco/markdown-preview.nvim',
         run = function() vim.fn['mkdp#util#install']() end,
@@ -185,8 +185,10 @@ require('packer').startup(function()
     }
 
     -- orgmode
+    -- use {'jceb/vim-orgmode'}
     use {
         "nvim-neorg/neorg",
+        -- tag="0.0.13",
         run = ":Neorg sync-parsers",
         config = function() require("plugin.neorg") end,
         requires = "nvim-lua/plenary.nvim"
@@ -210,6 +212,9 @@ require('packer').startup(function()
             require('nvim-terminal').setup()
         end
     }
+
+    -- tablemode
+    use {'dhruvasagar/vim-table-mode'}
 
     -- ui
     -- use {

@@ -10,10 +10,16 @@ require('neorg').setup {
                 }
             }
         },
-        ["core.gtd.base"] = {config = {workspace = "gtd"}},
+        ["core.gtd.base"] = {
+            config = {
+                workspace = "gtd",
+                exclude = {"archive", "paper_collections", "pdf"}
+            }
+        },
         ["core.norg.completion"] = {config = {engine = "nvim-cmp"}},
-        ["core.norg.concealer"] = {config = {icon_preset = "diamond", conceal=false}},
-        ["core.presenter"] = {config = {zen_mode = "zen-mode"}}
+        ["core.norg.concealer"] = {config = {icon_preset = "diamond"}},
+        ["core.presenter"] = {config = {zen_mode = "zen-mode"}},
+        ["core.norg.qol.toc"] = {config = {toc_split_placement = 'right'}}
     }
 }
 

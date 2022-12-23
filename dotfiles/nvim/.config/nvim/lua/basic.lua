@@ -22,6 +22,8 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 
+vim.opt.autochdir = true
+
 -- session
 vim.o.sessionoptions =
     "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
@@ -61,3 +63,5 @@ vim.g.indent_blankline_filetype_exclude = {'help', 'packer'}
 vim.g.indent_blankline_buftype_exclude = {'terminal', 'nofile'}
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 
+-- tablemode
+vim.g.table_mode_corner = '|'
