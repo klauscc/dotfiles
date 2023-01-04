@@ -18,10 +18,15 @@ local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim' -- Package manager
 
-    -- use 'tpope/vim-fugitive' -- Git commands in nvim
+    use 'tpope/vim-fugitive' -- Git commands in nvim
     use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
-    use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
+    -- use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
     -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function() require('Comment').setup() end
+    }
 
     -- File explorer
     use {
@@ -67,6 +72,11 @@ require('packer').startup(function()
         config = function() require("plugin.gitsigns") end
     }
 
+    -- use {
+    --     'fgheng/winbar.nvim',
+    --     config = function() require('winbar').setup() end
+    -- }
+
     -- Highlight, edit, and navigate code using a fast incremental parsing library
     use {
         'nvim-treesitter/nvim-treesitter-textobjects',
@@ -76,26 +86,31 @@ require('packer').startup(function()
 
     -- Completion
     require('complete').cmp(use)
+    -- use {'ms-jpq/coq_nvim', branch = 'coq'}
+    -- use {'ms-jpq/coq.artifacts', branch='artifacts'}
+    -- use {'ms-jpq/coq.thirdparty', branch='3p'}
+
     -- jump out of pairs
     require('complete').tabout(use)
     -- Snippets
     require('complete').ultisnips(use)
-    use {
-        'tzachar/cmp-fuzzy-path',
-        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
-    }
-    use {
-        'tzachar/cmp-fuzzy-buffer',
-        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
-    }
 
     -- LSP
     use {'williamboman/nvim-lsp-installer'}
     use 'ray-x/lsp_signature.nvim'
     use {'neovim/nvim-lspconfig', config = function() require('lsp') end}
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function()
+            local saga = require("lspsaga")
+
+            saga.init_lsp_saga({code_action_lightbulb={enable=false}})
+        end
+    })
 
     -- Tagbar
-    -- use 'majutsushi/tagbar'
+    use 'majutsushi/tagbar'
     use {
         'simrat39/symbols-outline.nvim',
         config = function()
@@ -191,7 +206,8 @@ require('packer').startup(function()
         -- tag="0.0.13",
         run = ":Neorg sync-parsers",
         config = function() require("plugin.neorg") end,
-        requires = "nvim-lua/plenary.nvim"
+        requires = "nvim-lua/plenary.nvim",
+        ft = "norg"
     }
     use {
         "folke/zen-mode.nvim",
