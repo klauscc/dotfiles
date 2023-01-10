@@ -154,7 +154,7 @@ require"lspconfig".efm.setup {
             },
             markdown = {
                 {
-                    formatCommand = "pandoc -f markdown -t gfm -sp --tab-stop=4",
+                    formatCommand = "pandoc -f markdown -t gfm -sp --tab-stop=4 --columns=95",
                     formatStdin = true
                 }
             },

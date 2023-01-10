@@ -62,6 +62,7 @@ require('packer').startup(function()
     }
 
     use 'joshdick/onedark.vim' -- Theme inspired by Atom
+    use 'folke/tokyonight.nvim'
     use 'itchyny/lightline.vim' -- Fancier statusline
     use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
 
@@ -105,7 +106,7 @@ require('packer').startup(function()
         config = function()
             local saga = require("lspsaga")
 
-            saga.init_lsp_saga({code_action_lightbulb={enable=false}})
+            saga.init_lsp_saga({code_action_lightbulb = {enable = false}})
         end
     })
 
@@ -150,6 +151,44 @@ require('packer').startup(function()
         run = function() vim.fn['mkdp#util#install']() end,
         ft = {'markdown'}
     }
+    use({
+        'jakewvincent/mkdnflow.nvim',
+        commit = '5c22dfc83d619ff110258eb26beeb923402d59d2',
+        -- commit='da9eb4dc5b67acee70098efb9cefa2ebdf7c585a',
+        config = function()
+            require('mkdnflow').setup({
+                -- Config goes here; leave blank for defaults
+                perspective = {priority = 'current'},
+                links = {
+                    transform_explicit = function(text)
+                        text = text:gsub(" ", "-")
+                        text = text:lower()
+                        -- text = os.date('%Y-%m-%d_') .. text
+                        return (text)
+                    end
+                },
+                mappings = {
+                    MkdnNextLink = {'n', '<Tab>'},
+                    MkdnPrevLink = {'n', '<S-Tab>'},
+                    MkdnTableNextCell = false,
+                    MkdnTablePrevCell = false
+                }
+            })
+        end
+    })
+    -- use {
+    --     'phaazon/mind.nvim',
+    --     branch = 'v2.2',
+    --     requires = {'nvim-lua/plenary.nvim'},
+    --     config = function()
+    --         require'mind'.setup({
+    --             persistence = {
+    --                 state_path = "/Users/klaus/My Drive/articles/mind/mind.json",
+    --                 data_dir = "/Users/klaus/My Drive/articles/mind/data"
+    --             }
+    --         })
+    --     end
+    -- }
 
     -- auto session
     use {

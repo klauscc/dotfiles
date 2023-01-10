@@ -22,6 +22,8 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 
+vim.opt.colorcolumn = '95'
+
 -- vim.opt.autochdir = true
 
 -- session
@@ -42,13 +44,14 @@ vim.cmd [[
 ]]
 
 -- Set colorscheme (order is important here)
+local theme = 'tokyonight-moon'
 vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
-vim.cmd [[colorscheme onedark]]
+vim.cmd("colorscheme " .. theme)
 
 -- Set statusbar
 vim.g.lightline = {
-    colorscheme = 'onedark',
+    colorscheme = 'tokyonight',
     active = {
         left = {
             {'mode', 'paste'}, {'gitbranch', 'readonly', 'filename', 'modified'}
@@ -65,3 +68,6 @@ vim.g.indent_blankline_show_trailing_blankline_indent = false
 
 -- tablemode
 vim.g.table_mode_corner = '|'
+
+-- markdown-preview
+vim.g.mkdp_auto_close = 0
