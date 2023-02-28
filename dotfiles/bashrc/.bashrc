@@ -4,21 +4,6 @@ export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 export PATH=/Users/klaus/usr/local/bin:/Users/klaus/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/klaus/usr/local/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/klaus/usr/local/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/klaus/usr/local/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/klaus/usr/local/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 function rssh()
 {
     host=$1
@@ -43,11 +28,9 @@ alias briss='/Users/klaus/usr/local/Briss-2.0/bin/Briss-2.0'
 
 alias sshcs="sshpass -f ~/.pwd ssh"
 
-conda activate torch-1.9.0
-
 alias mnt_opr='sshfs -o password_stdin,reconnect,follow_symlinks,ServerAliveInterval=15,ServerAliveCountMax=3 fengchan@opr:/home/fengchan/ ~/mnt/opr <<< "Wscf931023&@"'
 export PATH="/Library/TeX/texbin/":$PATH
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 # for project
 export PYTHONPATH="/Users/klaus/My Drive/projects/video_understanding/temporal-action-detection/vedatad"

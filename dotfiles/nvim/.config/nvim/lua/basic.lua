@@ -22,7 +22,7 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 
-vim.opt.autochdir = true
+-- vim.opt.autochdir = true
 
 -- session
 vim.o.sessionoptions =
