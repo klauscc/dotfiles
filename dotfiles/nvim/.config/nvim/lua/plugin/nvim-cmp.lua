@@ -10,10 +10,10 @@ cmp.setup {
         {name = 'path'}, -- for cmp-path
         {name = 'ultisnips'}, -- For ultisnips users.
         {name = 'nvim_lsp'}, -- { name = 'luasnip' }, -- For luasnip users.
-        {
-            name = 'fuzzy_path',
-            options = {fd_timeout_msec = 50, fd_cmd = {'fd', '-d', '4'}}
-        }
+        -- {
+        --     name = 'fuzzy_path',
+        --     options = {fd_timeout_msec = 50, fd_cmd = {'fd', '-d', '4'}}
+        -- }
     }, {
         -- {
         --     name = 'fuzzy_buffer',
