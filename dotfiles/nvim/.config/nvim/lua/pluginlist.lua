@@ -217,10 +217,12 @@ require('packer').startup(function()
         config = function() require("plugin.vimtex") end,
         after = 'nvim-cmp'
     }
+
     use {
         "brymer-meneses/grammar-guard.nvim",
         requires = {"neovim/nvim-lspconfig"}
     }
+    use { "barreiroleo/ltex-extra.nvim" }
 
     -- cursorline
     use {
