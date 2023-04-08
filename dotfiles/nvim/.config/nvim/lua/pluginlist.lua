@@ -103,11 +103,7 @@ require('packer').startup(function()
     use({
         "glepnir/lspsaga.nvim",
         branch = "main",
-        config = function()
-            local saga = require("lspsaga")
-
-            saga.init_lsp_saga({code_action_lightbulb = {enable = false}})
-        end
+        config = function() require("plugin.lspsaga") end
     })
 
     -- Tagbar
@@ -222,7 +218,7 @@ require('packer').startup(function()
         "brymer-meneses/grammar-guard.nvim",
         requires = {"neovim/nvim-lspconfig"}
     }
-    use { "barreiroleo/ltex-extra.nvim" }
+    use {"barreiroleo/ltex-extra.nvim"}
 
     -- cursorline
     use {
@@ -282,8 +278,20 @@ require('packer').startup(function()
     --     end
     -- }
 
+    use {
+        "luukvbaal/statuscol.nvim",
+        config = function() require("plugin.statuscol") end
+    }
+
+    -- code fold
+    use {
+        'kevinhwang91/nvim-ufo',
+        requires = 'kevinhwang91/promise-async',
+        config = function() require("plugin.nvim_ufo") end
+    }
+
 end)
 
-require('basic')
+require('options')
 require('mapping')
 require('plugin.treesitter')

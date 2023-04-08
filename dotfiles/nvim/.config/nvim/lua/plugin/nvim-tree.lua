@@ -39,7 +39,7 @@ local list = {
 -- vim.g.nvim_tree_highlight_opened_files = 1
 
 require('nvim-tree').setup {
-    actions = {},
+    actions = {change_dir = {global = true}},
     update_cwd = true,
     update_focused_file = {enable = false},
     view = {width = 40, mappings = {list = list, custom_only = true}},

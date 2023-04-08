@@ -71,3 +71,4 @@ vim.g.table_mode_corner = '|'
 
 -- markdown-preview
 vim.g.mkdp_auto_close = 0
+

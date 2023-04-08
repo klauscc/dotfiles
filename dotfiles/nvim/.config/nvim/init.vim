@@ -21,11 +21,11 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "i`", "i$"]
  nnoremap <Leader>ud :UndotreeToggle<CR>
 
 "fold
-augroup folding
-    autocmd!
-    autocmd FileType markdown setlocal foldmethod=expr
-    autocmd FileType markdown setlocal foldexpr=nvim_treesitter#foldexpr()
-augroup END
+" augroup folding
+"     autocmd!
+"     autocmd FileType markdown,python setlocal foldmethod=expr
+"     autocmd FileType markdown,python setlocal foldexpr=nvim_treesitter#foldexpr()
+" augroup END
 
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
