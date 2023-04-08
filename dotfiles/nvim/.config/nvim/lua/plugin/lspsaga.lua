@@ -1,6 +1,9 @@
 -- lspsaga
 local saga = require("lspsaga")
-saga.init_lsp_saga({code_action_lightbulb = {enable = false}})
+saga.init_lsp_saga({
+    code_action_lightbulb = {enable = false},
+    symbol_in_winbar = {enable = true}
+})
 
 local keymap = vim.keymap.set
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", {silent = true})
