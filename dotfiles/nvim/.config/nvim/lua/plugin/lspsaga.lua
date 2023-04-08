@@ -38,6 +38,7 @@ keymap("n", "[E", function()
         severity = vim.diagnostic.severity.ERROR
     })
 end, {silent = true})
+
 keymap("n", "]E", function()
     require("lspsaga.diagnostic").goto_next({
         severity = vim.diagnostic.severity.ERROR
@@ -48,4 +49,13 @@ end, {silent = true})
 keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", {silent = true})
 
 -- Hover Doc
--- keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", {silent = true})
+-- keymap("n", "K", "<cmd>LspTruesaga hover_doc<CR>", {silent = true})
+
+-- Float terminal
+-- if you want to pass some cli command into a terminal you can do it like this
+-- open lazygit in lspsaga float terminal
+keymap("n", "<leader>;", "<cmd>Lspsaga open_floaterm<CR>", {silent = true})
+-- -- close floaterm
+keymap("t", "<leader>;", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]],
+       {silent = true})
+

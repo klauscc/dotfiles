@@ -260,6 +260,7 @@ require('packer').startup(function()
     -- terminal
     use {
         's1n7ax/nvim-terminal',
+        disable=true,
         config = function()
             vim.o.hidden = true
             require('nvim-terminal').setup()
