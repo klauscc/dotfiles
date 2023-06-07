@@ -23,9 +23,13 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "i`", "i$"]
 "fold
 " augroup folding
 "     autocmd!
-"     autocmd FileType python,markdown setlocal foldmethod=expr
-"     autocmd FileType python,markdown setlocal foldexpr=nvim_treesitter#foldexpr()
+"     autocmd FileType markdown,python setlocal foldmethod=expr
+"     autocmd FileType markdown,python setlocal foldexpr=nvim_treesitter#foldexpr()
 " augroup END
+
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
+
 
 " autocmd FileType tex set omnifunc=vimtex#complete#omnifunc
 

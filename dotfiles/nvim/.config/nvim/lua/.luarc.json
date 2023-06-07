@@ -65,6 +65,7 @@
         "/Users/fncheng/.local/share/nvim/site/pack/packer/start/cmp-spell/after",
         "/Users/fncheng/.local/share/nvim/site/pack/packer/start/ultisnips/after",
         "/Users/fncheng/.local/share/nvim/site/pack/packer/start/vim-snippets/.",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ]
 }

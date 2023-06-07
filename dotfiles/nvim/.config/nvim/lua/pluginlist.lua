@@ -18,10 +18,15 @@ local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim' -- Package manager
 
-    -- use 'tpope/vim-fugitive' -- Git commands in nvim
+    use 'tpope/vim-fugitive' -- Git commands in nvim
     use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
-    use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
+    -- use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
     -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function() require('Comment').setup() end
+    }
 
     -- File explorer
     use {
@@ -57,6 +62,7 @@ require('packer').startup(function()
     }
 
     use 'joshdick/onedark.vim' -- Theme inspired by Atom
+    use 'folke/tokyonight.nvim'
     use 'itchyny/lightline.vim' -- Fancier statusline
     use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
 
@@ -67,6 +73,11 @@ require('packer').startup(function()
         config = function() require("plugin.gitsigns") end
     }
 
+    -- use {
+    --     'fgheng/winbar.nvim',
+    --     config = function() require('winbar').setup() end
+    -- }
+
     -- Highlight, edit, and navigate code using a fast incremental parsing library
     use {
         'nvim-treesitter/nvim-treesitter-textobjects',
@@ -76,26 +87,27 @@ require('packer').startup(function()
 
     -- Completion
     require('complete').cmp(use)
+    -- use {'ms-jpq/coq_nvim', branch = 'coq'}
+    -- use {'ms-jpq/coq.artifacts', branch='artifacts'}
+    -- use {'ms-jpq/coq.thirdparty', branch='3p'}
+
     -- jump out of pairs
     require('complete').tabout(use)
     -- Snippets
     require('complete').ultisnips(use)
-    use {
-        'tzachar/cmp-fuzzy-path',
-        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
-    }
-    use {
-        'tzachar/cmp-fuzzy-buffer',
-        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
-    }
 
     -- LSP
     use {'williamboman/nvim-lsp-installer'}
     use 'ray-x/lsp_signature.nvim'
     use {'neovim/nvim-lspconfig', config = function() require('lsp') end}
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function() require("plugin.lspsaga") end
+    })
 
     -- Tagbar
-    -- use 'majutsushi/tagbar'
+    use 'majutsushi/tagbar'
     use {
         'simrat39/symbols-outline.nvim',
         config = function()
@@ -135,6 +147,44 @@ require('packer').startup(function()
         run = function() vim.fn['mkdp#util#install']() end,
         ft = {'markdown'}
     }
+    use({
+        'jakewvincent/mkdnflow.nvim',
+        commit = '5c22dfc83d619ff110258eb26beeb923402d59d2',
+        -- commit='da9eb4dc5b67acee70098efb9cefa2ebdf7c585a',
+        config = function()
+            require('mkdnflow').setup({
+                -- Config goes here; leave blank for defaults
+                perspective = {priority = 'current'},
+                links = {
+                    transform_explicit = function(text)
+                        text = text:gsub(" ", "-")
+                        text = text:lower()
+                        -- text = os.date('%Y-%m-%d_') .. text
+                        return (text)
+                    end
+                },
+                mappings = {
+                    MkdnNextLink = {'n', '<Tab>'},
+                    MkdnPrevLink = {'n', '<S-Tab>'},
+                    MkdnTableNextCell = false,
+                    MkdnTablePrevCell = false
+                }
+            })
+        end
+    })
+    -- use {
+    --     'phaazon/mind.nvim',
+    --     branch = 'v2.2',
+    --     requires = {'nvim-lua/plenary.nvim'},
+    --     config = function()
+    --         require'mind'.setup({
+    --             persistence = {
+    --                 state_path = "/Users/klaus/My Drive/articles/mind/mind.json",
+    --                 data_dir = "/Users/klaus/My Drive/articles/mind/data"
+    --             }
+    --         })
+    --     end
+    -- }
 
     -- auto session
     use {
@@ -163,10 +213,12 @@ require('packer').startup(function()
         config = function() require("plugin.vimtex") end,
         after = 'nvim-cmp'
     }
+
     use {
         "brymer-meneses/grammar-guard.nvim",
         requires = {"neovim/nvim-lspconfig"}
     }
+    use {"barreiroleo/ltex-extra.nvim"}
 
     -- cursorline
     use {
@@ -191,7 +243,8 @@ require('packer').startup(function()
         -- tag="0.0.13",
         run = ":Neorg sync-parsers",
         config = function() require("plugin.neorg") end,
-        requires = "nvim-lua/plenary.nvim"
+        requires = "nvim-lua/plenary.nvim",
+        ft = "norg"
     }
     use {
         "folke/zen-mode.nvim",
@@ -207,6 +260,7 @@ require('packer').startup(function()
     -- terminal
     use {
         's1n7ax/nvim-terminal',
+        disable=true,
         config = function()
             vim.o.hidden = true
             require('nvim-terminal').setup()
@@ -225,8 +279,20 @@ require('packer').startup(function()
     --     end
     -- }
 
+    use {
+        "luukvbaal/statuscol.nvim",
+        config = function() require("plugin.statuscol") end
+    }
+
+    -- code fold
+    use {
+        'kevinhwang91/nvim-ufo',
+        requires = 'kevinhwang91/promise-async',
+        config = function() require("plugin.nvim_ufo") end
+    }
+
 end)
 
-require('basic')
+require('options')
 require('mapping')
 require('plugin.treesitter')

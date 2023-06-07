@@ -1,53 +1,53 @@
-ljspconfig = require("lspconfig")
+lspconfig = require("lspconfig")
 
 local on_attach = function(_, bufnr)
 
--- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     require"lsp_signature".on_attach()
 
     local opts = {noremap = true, silent = true}
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd',
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>jd',
                                 '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',
-                                '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',
-                                '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi',
-                                '<cmd>lua vim.lsp.buf.implementation()<CR>',
-                                opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>',
-                                '<cmd>lua vim.lsp.buf.signature_help()<CR>',
-                                opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa',
-                                '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>',
-                                opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr',
-                                '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
-                                opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl',
-                                '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
-                                opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D',
-                                '<cmd>lua vim.lsp.buf.type_definition()<CR>',
-                                opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn',
-                                '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr',
-                                '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca',
-                                '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e',
-                                '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d',
-                                '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d',
-                                '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>d',
-                                '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so',
-                                [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
-                                opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',
+    --                             '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',
+    --                             '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi',
+    --                             '<cmd>lua vim.lsp.buf.implementation()<CR>',
+    --                             opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>',
+    --                             '<cmd>lua vim.lsp.buf.signature_help()<CR>',
+    --                             opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa',
+    --                             '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>',
+    --                             opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr',
+    --                             '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
+    --                             opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl',
+    --                             '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
+    --                             opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D',
+    --                             '<cmd>lua vim.lsp.buf.type_definition()<CR>',
+    --                             opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn',
+    --                             '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr',
+    --                             '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca',
+    --                             '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e',
+    --                             '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d',
+    --                             '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d',
+    --                             '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>d',
+    --                             '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so',
+    --                             [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
+    --                             opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'cf',
                                 '<cmd>lua vim.lsp.buf.format { async = true }<CR>',
                                 opts)
@@ -60,6 +60,9 @@ local nvim_lsp = require 'lspconfig'
 -- nvim-cmp supports additional completion capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+-- local coq = require "coq"
+-- capabilities = coq.lsp_ensure_capabilities(capabilities)
 
 -- Enable the following language servers
 -- local servers = {'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'texlab'}
@@ -88,7 +91,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
-require('lspconfig').lua_ls.setup {
+require('lspconfig').sumneko_lua.setup {
     cmd = {'lua-language-server'},
     on_attach = on_attach,
     capabilities = capabilities,
@@ -125,7 +128,15 @@ require("lspconfig").ltex.setup({
     cmd = {
         '/Users/klaus/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls'
     }, -- add this if you install ltex-ls yourself
-    on_attach = on_attach,
+    on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+        require("ltex_extra").setup {
+            load_langs = {"es-AR", "en-US"}, -- table <string> : languages for witch dictionaries will be loaded
+            init_check = true, -- boolean : whether to load dictionaries on startup
+            path = nil, -- string : path to store dictionaries. Relative path uses current working directory
+            log_level = "none" -- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
+        }
+    end,
     capabilities = capabilities,
     handlers = {
         ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic
@@ -151,7 +162,7 @@ require"lspconfig".efm.setup {
             },
             markdown = {
                 {
-                    formatCommand = "pandoc -f markdown -t gfm -sp --tab-stop=4",
+                    formatCommand = "pandoc -f markdown -t gfm -sp --tab-stop=4 --columns=95",
                     formatStdin = true
                 }
             },

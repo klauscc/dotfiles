@@ -12,7 +12,7 @@ cmp.setup {
         {name = 'nvim_lsp'} -- { name = 'luasnip' }, -- For luasnip users.
         -- {
         --     name = 'fuzzy_path',
-        --     options = {fd_timeout_msec = 50, fd_cmd = {'fd', '-d', '4', '-p'}}
+        --     options = {fd_timeout_msec = 50, fd_cmd = {'fd', '-d', '4'}}
         -- }
     }, {
         -- {
@@ -123,7 +123,7 @@ cmp.setup {
 cmp.setup.filetype({'tex', 'markdown'}, {
     sources = cmp.config.sources({
         {name = 'buffer'}, {name = 'omni'}, {name = 'ultisnips'}, -- For ultisnips users.
-        {name = 'nvim_lsp'}
+        {name = 'nvim_lsp'}, {name = 'path'}
     })
 })
 

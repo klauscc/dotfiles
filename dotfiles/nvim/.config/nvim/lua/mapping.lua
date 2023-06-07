@@ -57,6 +57,10 @@ vim.api.nvim_set_keymap('n', '<leader>fu', ":ARsyncUp<CR>",
 vim.api.nvim_set_keymap('n', '<leader>lt', ":SymbolsOutline<CR>",
                         {noremap = true, silent = true})
 
+vim.api.nvim_set_keymap("n", "<Leader>nf",
+                        ":lua require('neogen').generate()<CR>",
+                        {noremap = true, silent = true})
+
 -- open files
 
 vim.api.nvim_set_keymap('n', 'g0', ":!open <cfile><CR>",

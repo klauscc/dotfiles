@@ -6,9 +6,17 @@ function M.cmp(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-cmdline'
     use {'f3fora/cmp-spell'}
-    use {'hrsh7th/cmp-path', commit = 'd83839ae'} -- complete system path.
+    use {'hrsh7th/cmp-path', --[[ commit = 'd83839ae' ]]} -- complete system path.
     use {'onsails/lspkind.nvim'}
     use {'hrsh7th/cmp-omni'}
+    use {
+        'tzachar/cmp-fuzzy-path',
+        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
+    }
+    use {
+        'tzachar/cmp-fuzzy-buffer',
+        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
+    }
     use {
         'hrsh7th/nvim-cmp', -- Autocompletion plugin
         config = function() require("plugin.nvim-cmp") end

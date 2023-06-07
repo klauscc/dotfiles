@@ -10,6 +10,12 @@ require('neorg').setup {
                 }
             }
         },
+        -- ["core.gtd.base"] = {
+        --     config = {
+        --         workspace = "gtd",
+        --         exclude = {"archive", "paper_collections", "pdf"}
+        --     }
+        -- },
         ["core.norg.completion"] = {config = {engine = "nvim-cmp"}},
         ["core.norg.concealer"] = {config = {icon_preset = "diamond"}},
         ["core.presenter"] = {config = {zen_mode = "zen-mode"}},
