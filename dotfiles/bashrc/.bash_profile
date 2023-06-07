@@ -1,17 +1,6 @@
+# export PATH=/Users/klaus/usr/local/bin:/Users/klaus/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/CPE/bin/FBSKSAgent.app/Contents/MacOS:/opt/facebook/bin:/opt/facebook/bin/biggrep:/opt/facebook/nix/bin:/opt/facebook/ops/scripts/chef:/opt/homebrew/bin:/usr/local/munki:/opt/facebook/hg/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
+
+
 export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
 source ~/.bashrc
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/fncheng/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/fncheng/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/fncheng/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/fncheng/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<

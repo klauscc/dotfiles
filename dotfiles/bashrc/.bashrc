@@ -2,8 +2,6 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
-export PATH=/Users/klaus/usr/local/bin:/Users/klaus/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
 function rssh()
 {
     host=$1
@@ -38,3 +36,22 @@ export PYTHONPATH="/Users/klaus/My Drive/projects/video_understanding/temporal-a
 # export PYTHONPATH="/Users/klaus/My Drive/projects/st-clip/singularity":$PYTHONPATH
 export PYTHONPATH="/Users/klaus/My Drive/projects/vindlu/vindlu":$PYTHONPATH
 
+## et to devfair
+alias etd='et devfair:8080 --tunnel "1234:22,18888:8888,18889:8889,18897:18897" --jport 8080'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/fncheng/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/fncheng/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/fncheng/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/fncheng/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+conda activate ego
