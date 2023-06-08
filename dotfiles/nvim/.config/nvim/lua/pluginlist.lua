@@ -126,7 +126,11 @@ require('packer').startup(function()
     }
 
     -- vim arsync
-    use {'kenn7/vim-arsync', config = function() end}
+    use {'kenn7/vim-arsync',
+        requires = {
+            {'prabirshrestha/async.vim'}
+        }
+    }
 
     -- multi cursors
     use 'mg979/vim-visual-multi'
