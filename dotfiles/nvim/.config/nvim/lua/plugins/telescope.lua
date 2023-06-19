@@ -1,3 +1,5 @@
+local Util = require("lazyvim.util")
+
 return {
   {
     "telescope.nvim",
@@ -34,6 +36,16 @@ return {
         "<leader>wl",
         [[<cmd>lua require("telescope").extensions.windows.list() <CR>]],
         desc = "List windows",
+      },
+      {
+        "<leader>ff",
+        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true, cwd = false }),
+        desc = "Find Files (root dir)",
+      },
+      {
+        "<leader>fF",
+        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true, cwd = true }),
+        desc = "Find Files (root dir)",
       },
     },
   },
