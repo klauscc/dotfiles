@@ -97,9 +97,9 @@ return {
           },
         },
         sources = {
+          { name = "ultisnips" },
           { name = "nvim_lsp" },
           { name = "buffer" },
-          { name = "ultisnips" },
           { name = "path" },
           { name = "emoji" },
         },
