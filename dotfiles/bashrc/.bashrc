@@ -55,4 +55,9 @@ export PYTHONPATH="/Users/klaus/My Drive/projects/video_understanding/temporal-a
 export PYTHONPATH="/Users/klaus/My Drive/projects/video_understanding/temporal-action-detection/SlowFast":$PYTHONPATH
 # export PYTHONPATH="/Users/klaus/My Drive/projects/st-clip/singularity":$PYTHONPATH
 export PYTHONPATH="/Users/klaus/My Drive/projects/vindlu/vindlu":$PYTHONPATH
+export PYTHONPATH="/Users/klaus/My Drive/projects/continual-vidl/FrozenBiLM":$PYTHONPATH
 
+# ego-exo
+export PYTHONPATH="/Users/klaus/My Drive/projects/ego_exo/Grounded-Segment-Anything/GroundingDINO":$PYTHONPATH
+export PYTHONPATH="/Users/klaus/My Drive/projects/intern2023meta/ego_exo_translation/dataseter":$PYTHONPATH
+export PYTHONPATH="/Users/klaus/My Drive/projects/intern2023meta/ego_exo_translation/DiT":$PYTHONPATH
