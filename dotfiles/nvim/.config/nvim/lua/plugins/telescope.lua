@@ -28,9 +28,14 @@ return {
     },
     keys = {
       {
-        "<leader>,",
+        "<leader><space>",
         "<cmd>Telescope buffers ignore_current_buffer=true sort_mru=true sort_lastused=true<cr>",
-        desc = "Switch Buffer",
+        desc = "List Buffers",
+      },
+      {
+        "<leader>,",
+        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true, cwd = false }),
+        desc = "List Files",
       },
       {
         "<leader>wl",
