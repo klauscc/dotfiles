@@ -35,10 +35,13 @@ return {
         mapping = cmp.mapping.preset.insert({
           ["<C-k>"] = cmp.mapping.select_prev_item(),
           ["<C-j>"] = cmp.mapping.select_next_item(),
+          ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ---@diagnostic disable-next-line: missing-parameter
           -- Abort auto completion
+          ["<C-e>"] = cmp.mapping.close(),
           ["<C-c>"] = cmp.mapping({
-            i = cmp.mapping.abort(),
+            i = cmp.mapping.close(),
             c = cmp.mapping.close(),
           }),
           -- Accept currently selected item. If none selected, `select` first item.
