@@ -6,6 +6,10 @@ return {
       diagnostics = {
         virtual_text = false,
       },
+      format = {
+        formatting_options = nil,
+        timeout_ms = 2000,
+      },
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
