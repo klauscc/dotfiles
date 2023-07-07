@@ -10,7 +10,7 @@ return {
   {
     "jakewvincent/mkdnflow.nvim",
     ft = { "markdown" },
-    commit = "5c22dfc83d619ff110258eb26beeb923402d59d2",
+    -- commit = "5c22dfc83d619ff110258eb26beeb923402d59d2",
     config = function()
       require("mkdnflow").setup({
         -- Config goes here; leave blank for defaults
