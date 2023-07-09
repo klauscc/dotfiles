@@ -15,3 +15,4 @@ opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.clipboard=""
 opt.spelllang = {}
+opt.wrap = true
