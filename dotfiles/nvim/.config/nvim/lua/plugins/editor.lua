@@ -69,4 +69,29 @@ return {
     "mg979/vim-visual-multi",
     event = "VeryLazy",
   },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      markdown = {
+        highlights = {
+          ["|%S-|"] = "@text.reference",
+          ["@%S+"] = "@parameter",
+          ["^%s*(Parameters:)"] = "@text.title",
+          ["^%s*(Return:)"] = "@text.title",
+          ["^%s*(See also:)"] = "@text.title",
+          ["{%S-}"] = "@parameter",
+          -- for google-style python docs
+          ["^%s*(Args:)"] = "@text.title",
+          ["^%s*(Returns:)"] = "@text.title",
+          ["^%s*(%S+)%s*%("] = "@parameter",
+          ["^%s*%S+%s*%((%S+)%)"] = "@type",
+          ["^%s*Returns:%s* (%S+)"] = "@type",
+          ["None"] = "@type",
+          ["dtype%s*:%s*(%S+)"] = "@type",
+        },
+      },
+    },
+  },
 }

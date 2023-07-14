@@ -10,6 +10,9 @@ return {
         formatting_options = nil,
         timeout_ms = 2000,
       },
+      inlay_hints = {
+        enabled = true,
+      },
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
