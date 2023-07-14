@@ -9,13 +9,18 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins",
-        opts = {
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins",
+      opts = {
+        colorscheme = "catppuccin",
         defaults = {
-            autocmds = true, -- lazyvim.config.autocmds
-            keymaps = true, -- lazyvim.config.keymaps
-            options = true, -- lazyvim.config.options
-      },}},
+          autocmds = true, -- lazyvim.config.autocmds
+          keymaps = true, -- lazyvim.config.keymaps
+          options = true, -- lazyvim.config.options
+        },
+      },
+    },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.util.project" },
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -33,7 +38,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "tokyonight", "habamax", "catppuccin" } },
   checker = { enabled = false }, -- automatically check for plugin updates
   performance = {
     rtp = {
