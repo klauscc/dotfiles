@@ -4,3 +4,4 @@ export PATH=/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin
 
 export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
 source ~/.bashrc
+. "$HOME/.cargo/env"
