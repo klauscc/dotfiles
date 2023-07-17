@@ -35,8 +35,8 @@ return {
           nls.builtins.diagnostics.fish,
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.beautysh,
-          nls.builtins.formatting.black,
           nls.builtins.formatting.isort,
+          nls.builtins.formatting.black,
           -- nls.builtins.diagnostics.flake8,
         },
       }

@@ -22,6 +22,9 @@ if ! type "stow" > /dev/null; then
     brew install stow
 fi
 
+# tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Install Packages via brew
 ## install neovim
 brew install neovim
