@@ -90,7 +90,7 @@ return {
           ["^%s*(Returns:)"] = "@text.title",
           ["^%s*(%S+)%s*%("] = "@parameter",
           ["^%s*%S+%s*%((%S+)%)"] = "@type",
-          ["^%s*Returns:%s* (%S+)"] = "@type",
+          -- ["^%s*Returns:%s* (%S+)"] = "@type",
           ["None"] = "@type",
           ["dtype%s*:%s*(%S+)"] = "@type",
         },
