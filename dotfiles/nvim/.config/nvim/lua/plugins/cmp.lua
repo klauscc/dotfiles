@@ -18,6 +18,7 @@ return {
           require("cmp_nvim_ultisnips").setup({})
         end,
       },
+      { "hrsh7th/cmp-omni" },
     },
     config = function()
       local cmp = require("cmp")
@@ -99,6 +100,12 @@ return {
         sources = {
           { name = "nvim_lsp" },
           { name = "buffer" },
+          {
+            name = "omni",
+            option = {
+              disable_omnifuncs = { "v:lua.vim.lsp.omnifunc" },
+            },
+          },
           { name = "ultisnips" },
           { name = "path" },
           { name = "emoji" },
