@@ -8,7 +8,7 @@ return {
       },
       format = {
         formatting_options = nil,
-        timeout_ms = 2000,
+        timeout_ms = 5000,
       },
       inlay_hints = {
         enabled = true,
