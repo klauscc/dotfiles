@@ -97,4 +97,16 @@ return {
       },
     },
   },
+
+  -- generate function / class docs
+  {
+    "danymat/neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*"
+    keys = {
+      { "<leader>nf", ":lua require('neogen').generate()<CR>", mode = "n", desc = "generate docs for func or class" },
+    },
+  },
 }

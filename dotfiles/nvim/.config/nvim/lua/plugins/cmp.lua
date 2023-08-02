@@ -100,15 +100,8 @@ return {
         sources = {
           { name = "nvim_lsp" },
           { name = "buffer" },
-          {
-            name = "omni",
-            option = {
-              disable_omnifuncs = { "v:lua.vim.lsp.omnifunc" },
-            },
-          },
           { name = "ultisnips" },
           { name = "path" },
-          { name = "emoji" },
         },
         confirm_opts = {
           behavior = cmp.ConfirmBehavior.Replace,
@@ -118,6 +111,18 @@ return {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
         },
+      })
+
+      cmp.setup.filetype({ "md", "tex", "latex" }, {
+        sources = cmp.config.sources({
+          { name = "emoji" },
+          {
+            name = "omni",
+            option = {
+              disable_omnifuncs = { "v:lua.vim.lsp.omnifunc" },
+            },
+          },
+        }),
       })
 
       cmp.setup.cmdline(":", {
