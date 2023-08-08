@@ -116,6 +116,9 @@ return {
       cmp.setup.filetype({ "md", "tex", "latex" }, {
         sources = cmp.config.sources({
           { name = "emoji" },
+          { name = "nvim_lsp" },
+          { name = "buffer" },
+          { name = "ultisnips" },
           {
             name = "omni",
             option = {

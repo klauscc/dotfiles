@@ -55,6 +55,7 @@ export PYTHONPATH="/Users/klaus/My Drive/projects/vindlu/vindlu":$PYTHONPATH
 
 export PYTHONPATH="/Users/fncheng/My Drive/projects/intern2023meta/ego_exo_translation/DiT":$PYTHONPATH
 export PYTHONPATH="/Users/fncheng/My Drive/projects/intern2023meta/ego_exo_translation/dataloader":$PYTHONPATH
+export PYTHONPATH="/Users/fncheng/My Drive/projects/intern2023meta/ego_exo_translation/e2o-translation-ng":$PYTHONPATH
 
 ## et to devfair
 alias etd='et devfair:8080 --tunnel "1234:22,18888:8888,18889:8889,18897:18897" --jport 8080'
