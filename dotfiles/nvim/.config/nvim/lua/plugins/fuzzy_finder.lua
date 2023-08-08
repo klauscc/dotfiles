@@ -3,6 +3,7 @@ local Util = require("lazyvim.util")
 return {
   {
     "telescope.nvim",
+    -- enabled = false,
     dependencies = {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -52,6 +53,22 @@ return {
         Util.telescope("files", { previewer = false, no_ignore = true, hidden = true, cwd = true }),
         desc = "Find Files (root dir)",
       },
+    },
+  },
+  {
+    "Yggdroot/LeaderF",
+    build = ":LeaderfInstallCExtension",
+    cmd = "Leaderf",
+    config = function()
+      vim.g.Lf_WindowPosition = "popup"
+      -- vim.g.Lf_ShortcutF = "<leader>,"
+    end,
+    keys = {
+      -- {
+      --   "<leader>,",
+      --   "<cmd>LeaderfFile<cr>",
+      --   desc = "List Files",
+      -- },
     },
   },
 }
