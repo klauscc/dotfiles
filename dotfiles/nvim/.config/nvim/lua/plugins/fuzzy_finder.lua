@@ -1,8 +1,23 @@
 local Util = require("lazyvim.util")
+
 return {
   {
     "telescope.nvim",
-    enabled = true,
+    opts = {
+      defaults = {
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--hidden",
+        },
+        file_ignore_patterns = { ".git/" },
+      },
+    },
     dependencies = {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -25,6 +40,12 @@ return {
           require("telescope").load_extension("windows")
         end,
       },
+      {
+        "nvim-telescope/telescope-live-grep-args.nvim",
+        config = function()
+          require("telescope").load_extension("live_grep_args")
+        end,
+      },
     },
     keys = {
       {
@@ -44,14 +65,26 @@ return {
       },
       {
         "<leader>ff",
-        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true, cwd = false }),
-        desc = "Find Files (root dir)",
+        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true }),
+        desc = "Find Files (cwd)",
+      },
+      -- { "<leader>sg", Util.telescope("live_grep", { hidden = true }), desc = "Grep (root dir)" },
+      {
+        "<leader>sg",
+        function()
+          require("telescope").extensions.live_grep_args.live_grep_args()
+        end,
+        desc = "Grep (root dir)",
       },
       {
-        "<leader>fF",
-        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true, cwd = true }),
-        desc = "Find Files (root dir)",
+        "<leader>sg",
+        function()
+          require("telescope-live-grep-args.shortcuts").grep_visual_selection()
+        end,
+        mode = "v",
+        desc = "Grep (root dir)",
       },
+      { "<leader>sG", Util.telescope("live_grep", { cwd = false, hidden = true }), desc = "Grep (cwd)" },
     },
   },
   {
