@@ -44,6 +44,7 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
+      enable_diagnostics = false,
       filesystem = {
         bind_to_cwd = true,
         filtered_items = {
