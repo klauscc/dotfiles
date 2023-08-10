@@ -55,8 +55,8 @@ return {
       },
       {
         "<leader>,",
-        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true, cwd = false }),
-        desc = "List Files",
+        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true}),
+        desc = "Find Files (root)",
       },
       {
         "<leader>wl",
@@ -65,7 +65,7 @@ return {
       },
       {
         "<leader>ff",
-        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true }),
+        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true, cwd=false }),
         desc = "Find Files (cwd)",
       },
       -- { "<leader>sg", Util.telescope("live_grep", { hidden = true }), desc = "Grep (root dir)" },

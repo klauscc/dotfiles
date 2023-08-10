@@ -46,7 +46,7 @@ return {
     opts = {
       enable_diagnostics = false,
       filesystem = {
-        bind_to_cwd = true,
+        bind_to_cwd = false,
         filtered_items = {
           hide_dotfiles = false,
           hide_gitignored = false,
@@ -66,14 +66,14 @@ return {
     },
     keys = {
       {
-        "<leader>fE",
+        "<leader>fe",
         function()
           require("neo-tree.command").execute({ toggle = true, dir = require("lazyvim.util").get_root() })
         end,
         desc = "Explorer NeoTree (cwd)",
       },
       {
-        "<leader>fe",
+        "<leader>fE",
         function()
           require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
         end,
