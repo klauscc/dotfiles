@@ -64,12 +64,6 @@ return {
         desc = "List windows",
       },
       {
-        "<leader>ff",
-        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true, cwd=false }),
-        desc = "Find Files (cwd)",
-      },
-      -- { "<leader>sg", Util.telescope("live_grep", { hidden = true }), desc = "Grep (root dir)" },
-      {
         "<leader>sg",
         function()
           require("telescope").extensions.live_grep_args.live_grep_args()
