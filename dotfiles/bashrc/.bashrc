@@ -2,22 +2,22 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
+export PATH=/Users/klaus/usr/local/bin:/Users/klaus/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/fncheng/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/klaus/usr/local/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/fncheng/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/fncheng/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/klaus/usr/local/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/klaus/usr/local/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/fncheng/miniconda3/bin:$PATH"
+        export PATH="/Users/klaus/usr/local/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-conda activate ego
 
 function rssh()
 {
@@ -36,6 +36,7 @@ alias ds="pmset displaysleepnow"
 # alias for folders
 alias paper='cd "$HOME/My Drive/deeplearning/papers"'
 alias pro='cd "$HOME/My Drive/projects"'
+alias note='cd "$HOME/My Drive/notes"'
 alias gb='cd "$HOME/My Drive/timeline/PhD-with-gedas"'
 
 alias briss='/Users/klaus/usr/local/Briss-2.0/bin/Briss-2.0'
@@ -43,21 +44,20 @@ alias briss='/Users/klaus/usr/local/Briss-2.0/bin/Briss-2.0'
 
 alias sshcs="sshpass -f ~/.pwd ssh"
 
+conda activate torch-1.9.0
+
 alias mnt_opr='sshfs -o password_stdin,reconnect,follow_symlinks,ServerAliveInterval=15,ServerAliveCountMax=3 fengchan@opr:/home/fengchan/ ~/mnt/opr <<< "Wscf931023&@"'
 export PATH="/Library/TeX/texbin/":$PATH
-# . "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
 
 # for project
 export PYTHONPATH="/Users/klaus/My Drive/projects/video_understanding/temporal-action-detection/vedatad"
 export PYTHONPATH="/Users/klaus/My Drive/projects/video_understanding/temporal-action-detection/SlowFast":$PYTHONPATH
 # export PYTHONPATH="/Users/klaus/My Drive/projects/st-clip/singularity":$PYTHONPATH
 export PYTHONPATH="/Users/klaus/My Drive/projects/vindlu/vindlu":$PYTHONPATH
+export PYTHONPATH="/Users/klaus/My Drive/projects/continual-vidl/FrozenBiLM":$PYTHONPATH
 
-export PYTHONPATH="/Users/fncheng/My Drive/projects/intern2023meta/ego_exo_translation/DiT":$PYTHONPATH
-export PYTHONPATH="/Users/fncheng/My Drive/projects/intern2023meta/ego_exo_translation/dataloader":$PYTHONPATH
-export PYTHONPATH="/Users/fncheng/My Drive/projects/intern2023meta/ego_exo_translation/e2o-translation-ng":$PYTHONPATH
-export PYTHONPATH="/Users/fncheng/My Drive/projects/intern2023meta/ego_exo_translation/e2o-translation-ng/e2o_translation":$PYTHONPATH
-
-## et to devfair
-alias etd='et devfair:8080 --tunnel "1234:22,18888:8888,18889:8889,18897:18897" --jport 8080'
-
+# ego-exo
+export PYTHONPATH="/Users/klaus/My Drive/projects/ego_exo/Grounded-Segment-Anything/GroundingDINO":$PYTHONPATH
+export PYTHONPATH="/Users/klaus/My Drive/projects/intern2023meta/ego_exo_translation/dataseter":$PYTHONPATH
+export PYTHONPATH="/Users/klaus/My Drive/projects/intern2023meta/ego_exo_translation/DiT":$PYTHONPATH
