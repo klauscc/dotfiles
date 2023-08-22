@@ -11,6 +11,7 @@ return {
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
       "hrsh7th/cmp-emoji",
+      "hrsh7th/cmp-omni",
       "hrsh7th/cmp-cmdline",
       {
         "quangnguyen30192/cmp-nvim-ultisnips",
@@ -101,6 +102,7 @@ return {
           { name = "nvim_lsp" },
           { name = "buffer" },
           { name = "path" },
+          { name = "omni" },
           { name = "emoji" },
         },
         confirm_opts = {

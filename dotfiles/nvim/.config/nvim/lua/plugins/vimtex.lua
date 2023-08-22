@@ -12,6 +12,8 @@ return {
     let g:vimtex_quickfix_open_on_warning = 0
     let g:vimtex_quickfix_enabled = 1
     let g:vimtex_compiler_latexmk = {
+    \ 'aux_dir' : 'build',
+    \ 'out_dir' : 'build',
     \ 'build_dir' : 'build',
     \ 'callback' : 1,
     \ 'continuous' : 1,
