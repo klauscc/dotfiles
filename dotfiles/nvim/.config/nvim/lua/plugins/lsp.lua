@@ -16,21 +16,6 @@ return {
       },
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {
-          settings = {
-            python = {
-              analysis = {
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-                diagnosticMode = "workspace",
-                typeCheckingMode = "basic",
-                diagnosticSeverityOverrides = {
-                  reportPrivateImportUsage = "none",
-                },
-              },
-            },
-          },
-        },
         ltex = {},
         -- efm = {
         --     init_options = { documentFormatting = true },
@@ -88,7 +73,7 @@ return {
           nls.builtins.formatting.beautysh,
           nls.builtins.formatting.isort,
           nls.builtins.formatting.black,
-          -- nls.builtins.diagnostics.flake8,
+          -- nls.builtins.diagnostics.mypy,
         },
       }
     end,
