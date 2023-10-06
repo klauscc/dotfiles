@@ -73,6 +73,7 @@ return {
           nls.builtins.formatting.beautysh,
           nls.builtins.formatting.isort,
           nls.builtins.formatting.black,
+          nls.builtins.formatting.latexindent,
           -- nls.builtins.diagnostics.mypy,
         },
       }
