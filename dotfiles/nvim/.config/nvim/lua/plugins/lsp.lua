@@ -16,7 +16,6 @@ return {
       },
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {},
         ltex = {},
         -- efm = {
         --     init_options = { documentFormatting = true },
@@ -24,7 +23,13 @@ return {
         --         rootMarkers = { ".git/" },
         --         languages = {
         --             lua = {
-        --                 { formatCommand = "lua-format -i", formatStdin = true },
+        --                 {
+        --                     formatCommand =
+        --                     "stylua ${--indent-width:tabSize} ${--range-start:charStart} ' .. '${--range-end:charEnd} --color Never -",
+        --                     formatStdin = true,
+        --                     rootMarkers = { 'stylua.toml', '.stylua.toml' },
+        --                     formatCanRange = true,
+        --                 }
         --             },
         --             python = {
         --                 { formatCommand = "isort --quiet - ",      formatStdin = true },
@@ -41,14 +46,10 @@ return {
         -- },
       },
       setup = {
-        ltex = function(server, opts)
-          opts.on_attach = function()
-            require("ltex_extra").setup({
-              load_langs = { "en-US" },
-              init_check = true,
-            })
-          end
-          require("lspconfig").ltex.setup(opts)
+        ltex = function()
+          require("lazyvim.util").on_attach(function(client, _)
+            require("ltex_extra").setup()
+          end)
         end,
       },
     },
@@ -63,17 +64,17 @@ return {
     opts = function()
       local nls = require("null-ls")
       return {
-        temp_dir = "/tmp",
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
         sources = {
           nls.builtins.formatting.fish_indent,
           nls.builtins.diagnostics.fish,
-          nls.builtins.formatting.stylua,
           nls.builtins.formatting.prettier,
+          nls.builtins.formatting.stylua,
           nls.builtins.formatting.beautysh,
           nls.builtins.formatting.isort,
           nls.builtins.formatting.black,
-          -- nls.builtins.diagnostics.flake8,
+          nls.builtins.formatting.latexindent,
+          -- nls.builtins.diagnostics.mypy,
         },
       }
     end,
