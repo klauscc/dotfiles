@@ -46,10 +46,14 @@ return {
         -- },
       },
       setup = {
-        ltex = function()
-          require("lazyvim.util").on_attach(function(client, _)
-            require("ltex_extra").setup()
-          end)
+        ltex = function(server, opts)
+          opts.on_attach = function()
+            require("ltex_extra").setup({
+              load_langs = { "en-US" },
+              init_check = true,
+            })
+          end
+          require("lspconfig").ltex.setup(opts)
         end,
       },
     },
