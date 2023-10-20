@@ -68,7 +68,7 @@ return {
       {
         "<leader>fe",
         function()
-          require("neo-tree.command").execute({ toggle = true, dir = require("lazyvim.util").get_root() })
+          require("neo-tree.command").execute({ toggle = true, dir = require("lazyvim.util").root.get() })
         end,
         desc = "Explorer NeoTree (cwd)",
       },
@@ -139,7 +139,8 @@ return {
       -- whether to map keybinds or not. default true
       default_mappings = true,
       -- which builtin marks to show. default {}
-      builtin_marks = { ".", "<", ">", "^" },
+      -- builtin_marks = { ".", "<", ">", "^" },
+      builtin_marks = {},
       -- whether movements cycle back to the beginning/end of buffer. default true
       cyclic = true,
       -- whether the shada file is updated after modifying uppercase marks. default false
@@ -170,4 +171,5 @@ return {
       mappings = {},
     },
   },
+  -- { "wellle/context.vim" },
 }
