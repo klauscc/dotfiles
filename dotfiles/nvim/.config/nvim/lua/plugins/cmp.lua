@@ -1,3 +1,7 @@
+local t = function(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
 return {
   {
     "L3MON4D3/LuaSnip",
@@ -25,6 +29,7 @@ return {
 
       -- require("luasnip.loaders.from_snipmate").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/snipmate" })
       -- require("luasnip.loaders.from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets/vscode" }
+      
       local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
       cmp.setup({
@@ -51,15 +56,22 @@ return {
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
+            elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+              cmp_ultisnips_mappings.jump_forwards(fallback)
             else
-              cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+              vim.api.nvim_feedkeys(t("<Plug>(Tabout)"), 'm', true)
+              -- fallback()
             end
           end, { "i", "s" }),
+
           ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
-            else
+            elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
               cmp_ultisnips_mappings.jump_backwards(fallback)
+            else
+              vim.api.nvim_feedkeys(t("<Plug>(TaboutBack)"), 'm', true)
+              -- fallback()
             end
           end, { "i", "s" }),
           -- ["<Tab>"] = cmp.mapping(function(fallback)
