@@ -92,6 +92,7 @@ return {
         -- Conform will run multiple formatters sequentially
         python = { "isort", "black" },
         sh = { "beautysh" },
+        markdown = {"prettier"}
       },
     },
   },
