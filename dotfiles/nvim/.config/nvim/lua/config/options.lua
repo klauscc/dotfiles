@@ -10,9 +10,6 @@ local opt = vim.opt
 opt.autowrite=false
 opt.relativenumber=false
 
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
 opt.clipboard=""
 opt.spelllang = {}
 opt.wrap = true
