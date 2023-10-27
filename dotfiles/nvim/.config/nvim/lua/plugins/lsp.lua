@@ -3,7 +3,6 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { { "barreiroleo/ltex_extra.nvim" }, { "creativenull/efmls-configs-nvim" } },
     opts = {
-      autoformat = false,
       diagnostics = {
         virtual_text = false,
       },

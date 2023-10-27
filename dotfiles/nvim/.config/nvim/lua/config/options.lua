@@ -5,6 +5,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- disable autoformat for LazyVim
+vim.g.autoformat = false
+
 local opt = vim.opt
 
 opt.autowrite=false
