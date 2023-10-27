@@ -62,8 +62,10 @@ return {
       keys[#keys + 1] = { ";e", "<cmd>lua vim.diagnostic.open_float()<cr>" }
     end,
   },
+
   {
     "nvimtools/none-ls.nvim",
+    enabled = false,
     opts = function()
       local nls = require("null-ls")
       return {
@@ -81,5 +83,16 @@ return {
         },
       }
     end,
+  },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        lua = { "stylua" },
+        -- Conform will run multiple formatters sequentially
+        python = { "isort", "black" },
+        sh = { "beautysh" },
+      },
+    },
   },
 }
