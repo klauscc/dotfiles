@@ -10,9 +10,10 @@ vim.g.autoformat = false
 
 local opt = vim.opt
 
-opt.autowrite=false
-opt.relativenumber=false
+opt.expandtab = true
+opt.autowrite = false
+opt.relativenumber = false
 
-opt.clipboard=""
+opt.clipboard = ""
 opt.spelllang = {}
 opt.wrap = true
