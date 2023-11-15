@@ -3,7 +3,6 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { { "barreiroleo/ltex_extra.nvim" }, { "creativenull/efmls-configs-nvim" } },
     opts = {
-      autoformat = false,
       diagnostics = {
         virtual_text = false,
       },
@@ -63,8 +62,10 @@ return {
       keys[#keys + 1] = { ";e", "<cmd>lua vim.diagnostic.open_float()<cr>" }
     end,
   },
+
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
+    enabled = false,
     opts = function()
       local nls = require("null-ls")
       return {
@@ -82,5 +83,17 @@ return {
         },
       }
     end,
+  },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        lua = { "stylua" },
+        -- Conform will run multiple formatters sequentially
+        python = { "isort", "black" },
+        sh = { "beautysh" },
+        markdown = {"prettier"}
+      },
+    },
   },
 }
