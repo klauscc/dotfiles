@@ -29,7 +29,7 @@ return {
                 typeCheckingMode = "basic",
                 diagnosticSeverityOverrides = {
                   reportPrivateImportUsage = "none",
-                  reportGeneralTypeIssues = "none",
+                  -- reportGeneralTypeIssues = "none",
                 },
               },
             },
