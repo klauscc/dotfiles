@@ -5,15 +5,14 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- disable autoformat for LazyVim
-vim.g.autoformat = false
-
 local opt = vim.opt
 
-opt.expandtab = true
-opt.autowrite = false
-opt.relativenumber = false
+opt.autowrite=false
+opt.relativenumber=false
 
-opt.clipboard = ""
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
+opt.clipboard=""
 opt.spelllang = {}
 opt.wrap = true
