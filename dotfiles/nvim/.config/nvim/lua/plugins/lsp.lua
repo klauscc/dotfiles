@@ -3,7 +3,6 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { { "barreiroleo/ltex_extra.nvim" }, { "creativenull/efmls-configs-nvim" } },
     opts = {
-      autoformat = false,
       diagnostics = {
         virtual_text = false,
       },
@@ -46,10 +45,14 @@ return {
         -- },
       },
       setup = {
-        ltex = function()
-          require("lazyvim.util").on_attach(function(client, _)
-            require("ltex_extra").setup()
-          end)
+        ltex = function(server, opts)
+          opts.on_attach = function()
+            require("ltex_extra").setup({
+              load_langs = { "en-US" },
+              init_check = true,
+            })
+          end
+          require("lspconfig").ltex.setup(opts)
         end,
       },
     },
@@ -59,8 +62,10 @@ return {
       keys[#keys + 1] = { ";e", "<cmd>lua vim.diagnostic.open_float()<cr>" }
     end,
   },
+
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
+    enabled = false,
     opts = function()
       local nls = require("null-ls")
       return {
@@ -78,5 +83,17 @@ return {
         },
       }
     end,
+  },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        lua = { "stylua" },
+        -- Conform will run multiple formatters sequentially
+        python = { "isort", "black" },
+        sh = { "beautysh" },
+        markdown = {"prettier"}
+      },
+    },
   },
 }
