@@ -62,3 +62,4 @@ export PYTHONPATH="/Users/klaus/My Drive/projects/continual-vidl/FrozenBiLM":$PY
 export PYTHONPATH="/Users/klaus/My Drive/projects/ego_exo/Grounded-Segment-Anything/GroundingDINO":$PYTHONPATH
 export PYTHONPATH="/Users/klaus/My Drive/projects/intern2023meta/ego_exo_translation/dataseter":$PYTHONPATH
 export PYTHONPATH="/Users/klaus/My Drive/projects/intern2023meta/ego_exo_translation/DiT":$PYTHONPATH
+export PYTHONPATH="/Users/klaus/My Drive/projects/ego-exo-translation/e2o-translation-ng-research":$PYTHONPATH
