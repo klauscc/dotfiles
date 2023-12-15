@@ -1,5 +1,8 @@
 return {
   {
+    "Vimjas/vim-python-pep8-indent",
+  },
+  {
     "kiyoon/jupynium.nvim",
     build = "pip install --user .",
     -- build = "conda run --no-capture-output -n jupynium pip install .",
