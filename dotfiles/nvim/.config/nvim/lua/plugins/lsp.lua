@@ -15,7 +15,7 @@ return {
       },
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
-        ltex = {},
+        ltex = { filetypes = { "tex" } },
         -- efm = {
         --     init_options = { documentFormatting = true },
         --     settings = {
@@ -92,7 +92,7 @@ return {
         -- Conform will run multiple formatters sequentially
         python = { "isort", "black" },
         sh = { "beautysh" },
-        markdown = {"prettier"}
+        markdown = { "prettier" },
       },
     },
   },
