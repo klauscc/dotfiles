@@ -1,5 +1,49 @@
 return {
   {
+    "Vimjas/vim-python-pep8-indent",
+  },
+  {
+    "kiyoon/jupynium.nvim",
+    build = "pip install --user .",
+    -- build = "conda run --no-capture-output -n jupynium pip install .",
+    -- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
+  },
+  {
+    "Vigemus/iron.nvim",
+    config = function()
+      require("iron.core").setup({
+        config = {
+          repl_definition = {
+            python = {
+              command = { "ssh", "-t", "-Y", "sun", "ipython", "--no-autoindent" },
+              -- command = { "sshpass", "-f", "~/.pwd", "ssh", "-t", "-Y", "opr", "ipython", "--no-autoindent" },
+              -- command = { "ipython" },
+            },
+          },
+          repl_open_cmd = require("iron.view").split.vertical.botright(60),
+        },
+        highlight = {
+          italic = false,
+        },
+        keymaps = {
+          send_motion = "<cr>",
+          visual_send = "<cr>",
+          send_file = "<leader>rf",
+          send_line = "<leader>rl",
+          send_until_cursor = "<leader>ru",
+          send_mark = "<leader>rm",
+          mark_motion = "<leader>mc",
+          mark_visual = "<leader>mc",
+          remove_mark = "<leader>md",
+          cr = "<leader><cr>",
+          interrupt = "<leader>ri",
+          exit = "<leader>rq",
+          clear = "<leader>rl",
+        },
+      })
+    end,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
@@ -29,7 +73,7 @@ return {
                 typeCheckingMode = "basic",
                 diagnosticSeverityOverrides = {
                   reportPrivateImportUsage = "none",
-                  -- reportGeneralTypeIssues = "none",
+                  reportGeneralTypeIssues = "none",
                 },
               },
             },
