@@ -4,12 +4,14 @@ return {
   },
   {
     "kiyoon/jupynium.nvim",
+    ft = "python",
     build = "pip install --user .",
     -- build = "conda run --no-capture-output -n jupynium pip install .",
     -- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
   },
   {
     "Vigemus/iron.nvim",
+    ft = "python",
     config = function()
       require("iron.core").setup({
         config = {

@@ -14,6 +14,7 @@ return {
   -- undo tree
   {
     "mbbill/undotree",
+    enabled=false,
     event = { "CmdlineEnter" },
     cmd = "UndotreeToggle",
     init = function()
