@@ -17,6 +17,13 @@ return {
         },
         file_ignore_patterns = { ".git/" },
       },
+      extensions = {
+        coc = {
+          theme = "ivy",
+          prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
+        },
+        windows = {},
+      },
     },
     dependencies = {
       {
@@ -29,14 +36,6 @@ return {
       {
         "kyoh86/telescope-windows.nvim",
         config = function()
-          require("telescope").setup({
-            extensions = {
-              windows = {
-                -- you can set options for this extension here (like below)
-                -- previewer = false
-              },
-            },
-          })
           require("telescope").load_extension("windows")
         end,
       },
@@ -44,6 +43,12 @@ return {
         "nvim-telescope/telescope-live-grep-args.nvim",
         config = function()
           require("telescope").load_extension("live_grep_args")
+        end,
+      },
+      {
+        "fannheyward/telescope-coc.nvim",
+        config = function()
+          require("telescope").load_extension("coc")
         end,
       },
     },
@@ -55,7 +60,7 @@ return {
       },
       {
         "<leader>,",
-        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true}),
+        Util.telescope("files", { previewer = false, no_ignore = true, hidden = true }),
         desc = "Find Files (root)",
       },
       {
@@ -79,6 +84,13 @@ return {
         desc = "Grep (root dir)",
       },
       { "<leader>sG", Util.telescope("live_grep", { cwd = false, hidden = true }), desc = "Grep (cwd)" },
+
+      -- coc
+      {
+        "gr",
+        "<cmd>Telescope coc references<cr>",
+        desc = "coc goto references",
+      },
     },
   },
   {

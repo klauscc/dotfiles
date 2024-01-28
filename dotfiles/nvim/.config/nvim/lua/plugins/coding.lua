@@ -17,18 +17,11 @@ return {
   -- snippets
   { "rafamadriz/friendly-snippets", enabled = false },
   { "L3MON4D3/LuaSnip", enabled = false },
-  {
-    "SirVer/ultisnips",
-    dependencies = { "honza/vim-snippets" },
-    config = function()
-      vim.g.ultisnips_python_style = "google"
-    end,
-  },
-
   -- tabout
   {
     "abecodes/tabout.nvim",
-    dependencies = { "nvim-treesitter", "nvim-cmp" },
+    enabled = true,
+    dependencies = { "nvim-treesitter"},
     opts = {
       tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
       backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
@@ -49,5 +42,9 @@ return {
       ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
       exclude = {}, -- tabout will ignore these filetypes
     },
+  },
+  {
+    "echasnovski/mini.pairs",
+    enabled = false,
   },
 }

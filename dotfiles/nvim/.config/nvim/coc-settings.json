@@ -1,0 +1,58 @@
+{
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"]
+    }
+  },
+  "pyright.inlayHints.functionReturnTypes": true,
+  "semanticTokens.enable": true,
+  "suggest.noselect": true,
+  "suggest.enablePreselect": false,
+  "suggest.completionItemKindLabels": {
+    "text": " ",
+    "method": "󰊕 ",
+    "function": "󰊕 ",
+    "constructor": " ",
+    "field": " ",
+    "variable": "󰀫 ",
+    "class": " ",
+    "interface": " ",
+    "module": " ",
+    "property": " ",
+    "unit": " ",
+    "value": " ",
+    "enum": " ",
+    "keyword": " ",
+    "snippet": " ",
+    "color": " ",
+    "file": " ",
+    "reference": " ",
+    "folder": " ",
+    "enumMember": " ",
+    "constant": "󰏿 ",
+    "struct": "󰆼 ",
+    "event": " ",
+    "operator": " ",
+    "typeParameter": " ",
+    "default": ""
+  },
+  "hover.floatConfig": {
+    "border": true,
+    "borderhighlight": "CocFloating"
+  },
+  "suggest.floatConfig": {
+    "border": true,
+    "borderhighlight": "CocFloating"
+  },
+  "diagnostic.floatConfig": {
+    "border": true,
+    "borderhighlight": "CocFloating"
+  },
+  "diagnostic.errorSign": " ",
+  "diagnostic.warningSign": " ",
+  "diagnostic.hintSign": " ",
+  "diagnostic.infoSign": " ",
+  "ltex.enabled": ["bibtex", "latex"]
+}

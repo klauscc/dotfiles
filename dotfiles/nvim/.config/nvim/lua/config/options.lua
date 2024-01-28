@@ -17,3 +17,8 @@ opt.relativenumber = false
 opt.clipboard = ""
 opt.spelllang = {}
 opt.wrap = true
+
+-- coc: Some servers have issues with backup files, see #649
+opt.backup = false
+opt.writebackup = false
+opt.updatetime = 300

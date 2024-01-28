@@ -1,5 +1,5 @@
 local t = function(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
 return {
@@ -12,6 +12,7 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
+    enabled = false,
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
       "hrsh7th/cmp-emoji",
@@ -29,7 +30,7 @@ return {
 
       -- require("luasnip.loaders.from_snipmate").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/snipmate" })
       -- require("luasnip.loaders.from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets/vscode" }
-      
+
       local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
       cmp.setup({
@@ -59,7 +60,7 @@ return {
             elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
               cmp_ultisnips_mappings.jump_forwards(fallback)
             else
-              vim.api.nvim_feedkeys(t("<Plug>(Tabout)"), 'm', true)
+              vim.api.nvim_feedkeys(t("<Plug>(Tabout)"), "m", true)
               -- fallback()
             end
           end, { "i", "s" }),
@@ -70,7 +71,7 @@ return {
             elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
               cmp_ultisnips_mappings.jump_backwards(fallback)
             else
-              vim.api.nvim_feedkeys(t("<Plug>(TaboutBack)"), 'm', true)
+              vim.api.nvim_feedkeys(t("<Plug>(TaboutBack)"), "m", true)
               -- fallback()
             end
           end, { "i", "s" }),
