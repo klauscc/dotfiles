@@ -4,12 +4,14 @@ return {
   },
   {
     "kiyoon/jupynium.nvim",
+    ft = "python",
     build = "pip install --user .",
     -- build = "conda run --no-capture-output -n jupynium pip install .",
     -- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
   },
   {
     "Vigemus/iron.nvim",
+    enabled = false,
     ft = "python",
     config = function()
       require("iron.core").setup({
@@ -96,6 +98,7 @@ return {
   {
     -- "numiras/semshi",
     "wookayin/semshi", -- use a maintained fork
+    enabled=true,
     ft = "python",
     build = ":UpdateRemotePlugins",
     init = function()

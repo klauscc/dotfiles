@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    enabled = false,
     dependencies = { { "barreiroleo/ltex_extra.nvim" }, { "creativenull/efmls-configs-nvim" } },
     opts = {
       diagnostics = {
@@ -93,6 +94,7 @@ return {
         python = { "isort", "black" },
         sh = { "beautysh" },
         markdown = { "prettier" },
+        json = { "prettier" },
       },
     },
   },
