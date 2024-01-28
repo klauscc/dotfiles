@@ -35,7 +35,7 @@ return {
       { "]e", "<Plug>(coc-diagnostic-next)", desc = "Next Diagnostic" },
     },
     config = function()
-      vim.g.coc_global_extensions = { "coc-json", "coc-pyright", "coc-snippets", "coc-pairs", "coc-ltex", "coc-vimtex" }
+      vim.g.coc_global_extensions = { "coc-json", "coc-pyright", "coc-snippets", "coc-pairs", "coc-ltex", "coc-vimtex", "coc-sh" }
       local keyset = vim.keymap.set
 
       function Smart_Tab()
