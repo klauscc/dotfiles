@@ -11,6 +11,7 @@ return {
   },
   {
     "Vigemus/iron.nvim",
+    enabled = false,
     ft = "python",
     config = function()
       require("iron.core").setup({
@@ -97,6 +98,7 @@ return {
   {
     -- "numiras/semshi",
     "wookayin/semshi", -- use a maintained fork
+    enabled=true,
     ft = "python",
     build = ":UpdateRemotePlugins",
     init = function()
