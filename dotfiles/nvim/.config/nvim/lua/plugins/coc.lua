@@ -59,7 +59,7 @@ return {
 
       local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 
-      vim.keymap.set("i", "<tab>", "v:lua.Smart_Tab()")
+      vim.keymap.set("i", "<tab>", "v:lua.Smart_Tab()", opts)
       -- keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
 
       keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
