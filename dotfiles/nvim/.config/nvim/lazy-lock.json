@@ -36,6 +36,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "75df79feb02d5e0ec114e447453775d4d291ea03" },
   "plenary.nvim": { "branch": "master", "commit": "f7adfc4b3f4f91aab6caebf42b3682945fbc35be" },
   "promise-async": { "branch": "main", "commit": "93540c168c5ed2b030ec3e6c40ab8bbb85e36355" },
+  "rose-pine": { "branch": "main", "commit": "a29b09d15a9ef5cd575fbe5ae2a3cfb854876caf" },
   "statuscol.nvim": { "branch": "main", "commit": "d954893262a57a92e46edd87de67e2b3fe72305e" },
   "tabout.nvim": { "branch": "master", "commit": "6a8f4e67a9bfc9bfc9989cc45253180598cc4339" },
   "telescope-coc.nvim": { "branch": "master", "commit": "421f50c56d66bc8f39c5deec05532deb071b597d" },
