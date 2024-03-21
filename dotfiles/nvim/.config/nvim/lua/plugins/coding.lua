@@ -21,7 +21,7 @@ return {
   {
     "abecodes/tabout.nvim",
     enabled = true,
-    dependencies = { "nvim-treesitter"},
+    dependencies = { "nvim-treesitter" },
     opts = {
       tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
       backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
@@ -46,5 +46,14 @@ return {
   {
     "echasnovski/mini.pairs",
     enabled = false,
+  },
+  {
+    "altermo/ultimate-autopair.nvim",
+    event = { "InsertEnter", "CmdlineEnter" },
+    branch = "v0.6", --recommended as each new version will have breaking changes
+    opts = {
+      tabout = { enable = true },
+      cr = { enable = false },
+    },
   },
 }

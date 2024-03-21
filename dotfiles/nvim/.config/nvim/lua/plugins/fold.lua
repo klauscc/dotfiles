@@ -8,7 +8,11 @@ return {
       return { "treesitter", "indent" }
     end,
     open_fold_hl_timeout = 100,
-    close_fold_kinds = { "imports", "comment" },
+    close_fold_kinds_for_ft = {
+        default = {'imports', 'comment'},
+        json = {'array'},
+        c = {'comment', 'region'}
+    },
     preview = {
       win_config = {
         border = { "", "─", "", "", "", "─", "", "" },
@@ -74,6 +78,7 @@ return {
       local winid = require("ufo").peekFoldedLinesUnderCursor()
       if not winid then
         _G.show_docs()
+        -- vim.fn.CocActionAsync('definitionHover')
         -- vim.lsp.buf.hover()
         -- vim.cmd [[ Lspsaga hover_doc ]]
       end

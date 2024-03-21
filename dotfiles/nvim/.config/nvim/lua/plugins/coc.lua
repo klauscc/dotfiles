@@ -35,7 +35,7 @@ return {
       { "]e", "<Plug>(coc-diagnostic-next)", desc = "Next Diagnostic" },
     },
     config = function()
-      vim.g.coc_global_extensions = { "coc-json", "coc-pyright", "coc-snippets", "coc-pairs", "coc-ltex", "coc-vimtex", "coc-sh" }
+      vim.g.coc_global_extensions = { "coc-json", "coc-pyright", "coc-snippets", "coc-ltex", "coc-vimtex", "coc-sh" }
       local keyset = vim.keymap.set
 
       function Smart_Tab()
@@ -59,7 +59,7 @@ return {
 
       local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 
-      vim.keymap.set("i", "<tab>", "v:lua.Smart_Tab()")
+      vim.keymap.set("i", "<tab>", "v:lua.Smart_Tab()", opts)
       -- keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
 
       keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
