@@ -6,6 +6,9 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
     ft = { "markdown" },
+    init = function()
+      vim.g.mkdp_auto_close = 0
+    end,
   },
   {
     "jakewvincent/mkdnflow.nvim",
