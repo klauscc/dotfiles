@@ -18,7 +18,7 @@ end
 
 return {
   {
-    "honza/vim-snippets",
+    "klauscc/vim-snippets",
     dependencies = { "neoclide/coc.nvim" },
     init = function()
       vim.g.ultisnips_python_style = "google"
@@ -28,7 +28,7 @@ return {
   },
   {
     "SirVer/ultisnips",
-    dependencies = { "honza/vim-snippets" },
+    dependencies = { "klauscc/vim-snippets" },
     init = function()
       vim.g.UltiSnipsExpandTrigger = "<c-cr>"
       vim.g.UltiSnipsJumpForwardTrigger = "<c-j>"
