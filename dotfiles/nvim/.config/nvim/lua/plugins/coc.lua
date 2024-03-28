@@ -27,6 +27,15 @@ return {
     end,
   },
   {
+    "SirVer/ultisnips",
+    dependencies = { "honza/vim-snippets" },
+    init = function()
+      vim.g.UltiSnipsExpandTrigger = "<c-cr>"
+      vim.g.UltiSnipsJumpForwardTrigger = "<c-j>"
+      vim.g.UltiSnipsJumpBackwardTrigger = "<c-k>"
+    end,
+  },
+  {
     "neoclide/coc.nvim",
     branch = "release",
     lazy = false,
@@ -35,7 +44,7 @@ return {
       { "]e", "<Plug>(coc-diagnostic-next)", desc = "Next Diagnostic" },
     },
     config = function()
-      vim.g.coc_global_extensions = { "coc-json", "coc-pyright", "coc-snippets", "coc-ltex", "coc-vimtex", "coc-sh" }
+      vim.g.coc_global_extensions = { "coc-json", "coc-pyright", "coc-ltex", "coc-vimtex", "coc-sh", "coc-ultisnips" }
       local keyset = vim.keymap.set
 
       function Smart_Tab()
