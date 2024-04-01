@@ -37,6 +37,7 @@ return {
   },
   {
     "neoclide/coc.nvim",
+    dependencies = { "altermo/ultimate-autopair.nvim", "SirVer/ultisnips" },
     branch = "release",
     lazy = false,
     keys = {
@@ -72,7 +73,15 @@ return {
       -- keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
 
       keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
+
       keyset("i", "<cr>", [[coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"]], opts)
+      -- keyset("i", "<CR>", function()
+      --   if vim.fn["coc#pum#visible"]() == 1 then
+      --     return vim.fn["coc#_select_confirm"]()
+      --   end
+      --   return "<c-g>u<cr>"
+      -- end, { silent = true, expr = true })
+
       keyset("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
       -- keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
       -- keyset("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })

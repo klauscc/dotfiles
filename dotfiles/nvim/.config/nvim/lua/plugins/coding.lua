@@ -21,7 +21,7 @@ return {
   {
     "abecodes/tabout.nvim",
     enabled = true,
-    dependencies = { "nvim-treesitter" },
+    dependencies = { "nvim-treesitter", "neoclide/coc.nvim" },
     opts = {
       tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
       backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
@@ -53,7 +53,7 @@ return {
     branch = "v0.6", --recommended as each new version will have breaking changes
     opts = {
       tabout = { enable = true },
-      cr = { enable = false },
+      cr = { enable = true, map = "<plug>ultimate-autopair-CR" },
     },
   },
 }
