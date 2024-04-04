@@ -3,7 +3,7 @@ export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 export PATH=/Users/klaus/usr/local/bin:/Users/klaus/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-export PATH=/Applications/kitty.app/Contents/MacOS:$PATH
+export PATH=/Applications/WezTerm.app/Contents/MacOS:$PATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
