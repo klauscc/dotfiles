@@ -14,7 +14,7 @@ return {
   -- undo tree
   {
     "mbbill/undotree",
-    enabled=false,
+    enabled = false,
     event = { "CmdlineEnter" },
     cmd = "UndotreeToggle",
     init = function()
@@ -47,6 +47,9 @@ return {
     opts = {
       enable_diagnostics = false,
       filesystem = {
+        follow_current_file = {
+          enabled = false,
+        },
         bind_to_cwd = false,
         filtered_items = {
           hide_dotfiles = false,
