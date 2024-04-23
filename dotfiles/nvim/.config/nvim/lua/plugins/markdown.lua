@@ -29,9 +29,9 @@ return {
         mappings = {
           MkdnNextLink = { "n", "<Tab>" },
           MkdnPrevLink = { "n", "<S-Tab>" },
-          MkdnTableNextCell = false,
-          MkdnTablePrevCell = false,
-          MkdnTagSpan = {"v", "<C-CR>"},
+          MkdnTableNextCell = { "i", "<C-j>" },
+          MkdnTablePrevCell = { "i", "<C-k>" },
+          MkdnTagSpan = { "v", "<C-CR>" },
         },
       })
     end,
