@@ -134,12 +134,12 @@ return {
       -- Remap <C-f> and <C-b> to scroll float windows/popups
       ---@diagnostic disable-next-line: redefined-local
       local opts = { silent = true, nowait = true, expr = true }
-      keyset("n", "<C-j>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
-      keyset("n", "<C-k>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
+      keyset("n", "<C-j>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-j>"', opts)
+      keyset("n", "<C-k>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-k>"', opts)
       keyset("i", "<C-j>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
       keyset("i", "<C-k>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
-      keyset("v", "<C-j>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
-      keyset("v", "<C-k>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
+      keyset("v", "<C-j>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-j>"', opts)
+      keyset("v", "<C-k>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-k>"', opts)
 
       -- Use CTRL-S for selections ranges
       -- Requires 'textDocument/selectionRange' support of language server
