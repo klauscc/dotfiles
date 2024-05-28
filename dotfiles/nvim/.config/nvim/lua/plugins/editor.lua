@@ -40,54 +40,6 @@ return {
       { "<leader>sr", "<Plug>CtrlSFPrompt", mode = "n", desc = "Replace in files (CtrlSF)" },
     },
   },
-
-  -- file explore
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      enable_diagnostics = false,
-      filesystem = {
-        follow_current_file = {
-          enabled = false,
-        },
-        bind_to_cwd = false,
-        filtered_items = {
-          hide_dotfiles = false,
-          hide_gitignored = false,
-        },
-        window = {
-          mappings = {
-            ["<space>"] = "none",
-            ["s"] = "none",
-            ["w"] = "none",
-            ["S"] = "none",
-            ["v"] = "open_vsplit",
-            ["V"] = "open_split",
-            ["a"] = { "add", config = { show_path = "absolute" } },
-          },
-        },
-      },
-    },
-    keys = {
-      {
-        "<leader>fe",
-        function()
-          require("neo-tree.command").execute({ toggle = true, dir = require("lazyvim.util").root.get() })
-        end,
-        desc = "Explorer NeoTree (cwd)",
-      },
-      {
-        "<leader>fE",
-        function()
-          require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
-        end,
-        desc = "Explorer NeoTree (root dir)",
-      },
-      { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (root dir)", remap = true },
-      { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
-    },
-  },
-
   -- multi cursor
   {
     "mg979/vim-visual-multi",
