@@ -1,5 +1,10 @@
 return {
 
+  -- surround
+  {
+    "tpope/vim-surround",
+  },
+
   -- arsync
   {
     "kenn7/vim-arsync",
