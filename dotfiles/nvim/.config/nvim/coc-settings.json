@@ -8,7 +8,7 @@
   },
   "inlayHint.enable": false,
   "pyright.inlayHints.functionReturnTypes": true,
-  "semanticTokens.enable": true,
+  "semanticTokens.enable": false,
   "suggest.noselect": true,
   "suggest.enablePreselect": false,
   "suggest.completionItemKindLabels": {
