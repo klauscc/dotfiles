@@ -6,6 +6,7 @@
       "filetypes": ["sh"]
     }
   },
+  "inlayHint.enable": false,
   "pyright.inlayHints.functionReturnTypes": true,
   "semanticTokens.enable": true,
   "suggest.noselect": true,
