@@ -20,6 +20,4 @@ return {
       { "<c-b>", mode = { "i", "n", "s" }, false },
     },
   },
-  -- ColorSchemes
-  { "rose-pine/neovim", name = "rose-pine", lazy = false, priority = 1000 },
 }
