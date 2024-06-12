@@ -22,7 +22,6 @@ api.nvim_create_autocmd({ "FocusLost" }, {
 api.nvim_create_autocmd({ "FocusGained" }, {
   callback = function(ev)
     _G.coc_timeout_enabled = 0
-    print("start coc")
     vim.cmd("CocStart")
   end,
 })
