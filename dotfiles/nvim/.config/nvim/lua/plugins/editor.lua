@@ -9,20 +9,36 @@ return {
       require("nvim-surround").setup({
         -- Configuration here, or leave empty to use defaults
         keymaps = {
-        insert = "<C-g>s",
-        insert_line = "<C-g>S",
-        normal = "ys",
-        normal_cur = "yss",
-        normal_line = "yS",
-        normal_cur_line = "ySS",
-        visual = "ys",
-        visual_line = "gS",
-        delete = "ds",
-        change = "cs",
-        change_line = "cS",
-    },
+          insert = "<C-g>s",
+          insert_line = "<C-g>S",
+          normal = "ys",
+          normal_cur = "yss",
+          normal_line = "yS",
+          normal_cur_line = "ySS",
+          visual = "ys",
+          visual_line = "gS",
+          delete = "ds",
+          change = "cs",
+          change_line = "cS",
+        },
       })
     end,
+  },
+
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    vscode = true,
+    ---@type Flash.Config
+    opts = {},
+  -- stylua: ignore
+  keys = {
+    { "s", mode = { "n", "x"}, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  },
   },
 
   -- arsync
