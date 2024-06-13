@@ -19,17 +19,22 @@ return {
       highlight_groups = {
         CocUnusedHighlight = { fg = "muted" },
         CocInlayHint = { fg = "muted" },
-        CocErrorHighlight = { link = "error" },
+
+        CocErrorHighlight = { fg = "love", undercurl = true },
         CocErrorSign = { link = "error" },
         CocErrorVirtualText = { link = "error" },
-        CocHintHighlight = { link = "hint" },
+
+        CocHintHighlight = { fg = "iris", undercurl = true },
         CocHintSign = { link = "hint" },
         CocHintVirtualText = { link = "hint" },
-        CocInfoHighlight = { link = "info" },
+
+        CocInfoHighlight = { fg = "foam", undercurl = true },
         CocInfoSign = { link = "info" },
         CocInfoVirtualText = { link = "info" },
-        CocWarningHighlight = { link = "warning" },
+
+        CocWarningHighlight = { fg = "gold", undercurl = true },
         CocWarningSign = { link = "warning" },
+        CocWarningVirtualText = { link = "warning" },
       },
     },
   },
