@@ -10,7 +10,8 @@ config.font = wezterm.font("Hack Nerd Font Mono")
 config.font_size = 14
 config.freetype_load_target = "Normal"
 
-config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "rose-pine"
+config.color_scheme = "catppuccin-mocha"
 config.automatically_reload_config = true
 
 config.keys = {
