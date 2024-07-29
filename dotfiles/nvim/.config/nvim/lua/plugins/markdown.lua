@@ -36,4 +36,29 @@ return {
       })
     end,
   },
+  {
+    "OXY2DEV/markview.nvim",
+    ft = "markdown",
+
+    dependencies = {
+      -- You may not need this if you don't lazy load
+      -- Or if the parsers are in your $RUNTIMEPATH
+      "nvim-treesitter/nvim-treesitter",
+
+      "nvim-tree/nvim-web-devicons",
+    },
+
+    opts = {
+      options = {
+        on_enable = {
+          conceallevel = 2,
+          concealcursor = "",
+        },
+        on_disable = {
+          conceallevel = 0,
+          concealcursor = "",
+        },
+      },
+    },
+  },
 }
