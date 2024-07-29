@@ -14,6 +14,8 @@ config.freetype_load_target = "Normal"
 config.color_scheme = "catppuccin-mocha"
 config.automatically_reload_config = true
 
+config.audible_bell = "Disabled"
+
 config.keys = {
 	{ key = "LeftArrow", mods = "SUPER", action = act.ActivateTabRelative(-1) },
 	{ key = "RightArrow", mods = "SUPER", action = act.ActivateTabRelative(1) },
