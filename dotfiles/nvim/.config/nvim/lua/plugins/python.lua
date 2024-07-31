@@ -6,6 +6,7 @@ return {
     "kiyoon/jupynium.nvim",
     ft = "python",
     build = "pip install --user .",
+    commit = "6cf5b",
     -- build = "conda run --no-capture-output -n jupynium pip install .",
     -- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
   },
