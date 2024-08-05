@@ -1,15 +1,9 @@
 [user]
-    email = chengfeng2333@gmail.com
-    name = Feng Cheng
-[push]
-	default = simple
-[alias]
-lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-lg = !"git lg1"
-[http]
-	postBuffer = 524288000
-[pull]
-	rebase = true
-[init]
-	defaultBranch = main
+        name = feng.cheng@bytedance.com
+        email = feng.cheng@bytedance.com@bytedance.com
+[url "ssh://feng.cheng@bytedance.com@git.byted.org:29418"]
+        insteadOf = https://git.byted.org
+[url "ssh://feng.cheng@bytedance.com@git.byted.org:29418"]
+        insteadOf = https://review.byted.org
+[url "git@code.byted.org:"]
+        insteadOf = https://code.byted.org/
