@@ -66,3 +66,5 @@ export PYTHONPATH="/Users/klaus/My Drive/projects/ego-exo-translation/e2o-transl
 
 # long-video-vlm
 export PYTHONPATH="/Users/klaus/My Drive/projects/long-video-llm/src/LLaVA":"/Users/klaus/My Drive/projects/long-video-llm/src/IG-VLM":$PYTHONPATH
+
+export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
