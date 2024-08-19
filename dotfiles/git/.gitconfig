@@ -1,6 +1,6 @@
 [user]
-        name = feng.cheng@bytedance.com
-        email = feng.cheng@bytedance.com@bytedance.com
+        name = feng.cheng
+        email = feng.cheng@bytedance.com
 [url "ssh://feng.cheng@bytedance.com@git.byted.org:29418"]
         insteadOf = https://git.byted.org
 [url "ssh://feng.cheng@bytedance.com@git.byted.org:29418"]
