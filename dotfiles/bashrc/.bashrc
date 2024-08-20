@@ -66,3 +66,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 conda activate py310
+
+export PYTHONPATH=/Users/bytedance/Documents/projects/vfm:$PYTHONPATH
