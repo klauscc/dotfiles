@@ -68,3 +68,5 @@ unset __conda_setup
 conda activate py310
 
 export PYTHONPATH=/Users/bytedance/Documents/projects/vfm:$PYTHONPATH
+
+export OPENAI_API_KEY=duBzK9TkzDdroC7yfp4gozjuHkMc1VYs

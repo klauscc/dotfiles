@@ -14,7 +14,8 @@ require("lazy").setup({
       import = "lazyvim.plugins",
       opts = {
         -- colorscheme = "catppuccin",
-        colorscheme = "rose-pine-moon",
+        -- colorscheme = "rose-pine-moon",
+        colorscheme = "rose-pine-dawn",
         defaults = {
           autocmds = true, -- lazyvim.config.autocmds
           keymaps = true, -- lazyvim.config.keymaps
