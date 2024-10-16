@@ -11,8 +11,8 @@ config.font_size = 14
 config.freetype_load_target = "Normal"
 
 -- config.color_scheme = "rose-pine"
--- config.color_scheme = "catppuccin-mocha"
-config.color_scheme = "catppuccin-latte"
+config.color_scheme = "catppuccin-mocha"
+-- config.color_scheme = "catppuccin-latte"
 config.automatically_reload_config = true
 
 config.audible_bell = "Disabled"

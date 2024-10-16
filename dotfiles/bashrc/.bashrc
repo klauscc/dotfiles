@@ -21,6 +21,7 @@ alias ds="pmset displaysleepnow"
 # alias for folders
 alias paper='cd "$HOME/My Drive/deeplearning/papers"'
 alias pro='cd "$HOME/Documents/projects"'
+alias prog='cd "$HOME/Google Drive/My Drive/projects"'
 alias note='cd "$HOME/My Drive/notes"'
 alias gb='cd "$HOME/My Drive/timeline/PhD-with-gedas"'
 
