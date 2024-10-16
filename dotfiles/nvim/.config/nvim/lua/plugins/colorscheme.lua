@@ -17,6 +17,7 @@ return {
     priority = 1000,
     opts = {
       highlight_groups = {
+        CoCSearch = { fg = "love" },
         CocUnusedHighlight = { fg = "muted" },
         CocInlayHint = { fg = "muted" },
 
