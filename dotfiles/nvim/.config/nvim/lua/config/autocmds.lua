@@ -25,3 +25,11 @@ api.nvim_create_autocmd({ "FocusGained" }, {
     vim.cmd("CocStart")
   end,
 })
+
+-- commentstring
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = ".vim-arsync",
+  callback = function()
+    vim.bo.filetype = "sh"
+  end,
+})
